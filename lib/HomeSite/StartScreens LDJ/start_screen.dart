@@ -34,7 +34,7 @@ class StartScreen extends StatelessWidget {
                   children: [
                     Text(
                         textAlign: TextAlign.start,
-                        "Pseudonym",
+                        "Name",
                         style: GoogleFonts.manrope(fontSize: 12)),
                     Container(
                       decoration: BoxDecoration(
