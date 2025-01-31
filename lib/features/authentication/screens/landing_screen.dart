@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:ldj_app/config/my_theme_eins.dart';
 import 'package:ldj_app/features/authentication/screens/signup_screen.dart';
+import 'package:ldj_app/features/game_selection/screens/games_guest.dart';
+import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
+import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -12,6 +14,32 @@ class LandingScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(children: [
         MyThemeEins(),
+        Column(
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SizedBox(
+                  height: 70,
+                  width: 60,
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                            builder: (context) => SettingsScreen()),
+                      );
+                    },
+                    icon: Icon(Icons.settings),
+                    color: Color(0xFFFFFFFF),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -73,7 +101,13 @@ class LandingScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     FilledButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => GamesScreen(),
+                          ),
+                        );
+                      },
                       child: Text("Anmelden"),
                     ),
                     TextButton(
@@ -85,7 +119,13 @@ class LandingScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         FilledButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => GamesGuestScreen(),
+                              ),
+                            );
+                          },
                           child: Text("Gast Anmeldung"),
                         ),
                         FilledButton(

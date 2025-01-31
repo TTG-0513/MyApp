@@ -28,20 +28,7 @@ class Tipps extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(context).pop();
                     },
-                    icon: Icon(Icons.arrow_circle_left_outlined),
-                    color: Color(0xFFFFFFFF),
-                  ),
-                ),
-                SizedBox(
-                  height: 70,
-                  width: 60,
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => GamesScreen()),
-                      );
-                    },
-                    icon: Icon(Icons.settings),
+                    icon: Icon(Icons.arrow_back),
                     color: Color(0xFFFFFFFF),
                   ),
                 ),

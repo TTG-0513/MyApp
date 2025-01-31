@@ -30,7 +30,7 @@ class GamesScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
-                      icon: Icon(Icons.arrow_circle_left_outlined),
+                      icon: Icon(Icons.arrow_back),
                       color: Color(0xFFFFFFFF),
                     ),
                   ),

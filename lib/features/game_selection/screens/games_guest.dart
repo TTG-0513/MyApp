@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
+import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
 import 'package:ldj_app/shared/screens/tips_tricks.dart';
 
@@ -30,7 +31,7 @@ class GamesGuestScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
-                      icon: Icon(Icons.arrow_circle_left_outlined),
+                      icon: Icon(Icons.arrow_back),
                       color: Color(0xFFFFFFFF),
                     ),
                   ),
@@ -41,7 +42,7 @@ class GamesGuestScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (context) => GamesScreen()),
+                              builder: (context) => SettingsScreen()),
                         );
                       },
                       icon: Icon(Icons.settings),
