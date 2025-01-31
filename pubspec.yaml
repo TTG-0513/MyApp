@@ -12,6 +12,7 @@ dependencies:
   flutter_gen: ^5.8.0
   flutter_svg: ^2.0.17
   google_fonts: ^6.2.1
+  
 
 dev_dependencies:
   flutter_test:
@@ -23,10 +24,10 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: assets/icons/app_logo_icon.png
+  image_path: assets/icons/AppLogoIcon.png
 
 flutter_native_splash:
-  image: assets/splashes/Dartscheibe 1.png
+  image: assets/splash/AppLogoSplash.png
 
 flutter:
   uses-material-design: true
