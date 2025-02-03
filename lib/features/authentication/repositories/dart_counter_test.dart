@@ -226,15 +226,16 @@ class DartCounterTest extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(8)),
                           ),
                           child: TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                "false",
-                                style: GoogleFonts.manrope(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFFEE0E47),
-                                ),
-                              )),
+                            onPressed: () {},
+                            child: Text(
+                              "false",
+                              style: GoogleFonts.manrope(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFFEE0E47),
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),

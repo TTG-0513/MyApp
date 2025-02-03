@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/authentication/repositories/dart_counter_test.dart';
+import 'package:ldj_app/features/game_selection/screens/user_history.dart';
 import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
 import 'package:ldj_app/shared/screens/tips_tricks.dart';
 
@@ -88,7 +89,7 @@ class GamesScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DartCounterTest(),
+                        builder: (context) => GameSpezifikation(),
                       ),
                     );
                   },
@@ -188,7 +189,7 @@ class GamesScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => GameSpezifikation(),
+                        builder: (context) => UserHistory(),
                       ),
                     );
                   },
