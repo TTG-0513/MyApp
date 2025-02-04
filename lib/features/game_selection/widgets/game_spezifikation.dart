@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/authentication/repositories/dart_counter_test.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
+import 'package:ldj_app/features/game_selection/widgets/dropdowns/dropdown_in.dart';
 
 class GameSpezifikation extends StatelessWidget {
   const GameSpezifikation({super.key});
@@ -50,34 +51,92 @@ class GameSpezifikation extends StatelessWidget {
                 ],
               ),
               Padding(padding: EdgeInsets.all(2)),
-              Container(
-                height: 50,
-                width: 400,
-                color: Color.fromARGB(175, 183, 105, 105),
-                child: Text(
-                  "User Name",
-                  style: GoogleFonts.manrope(
-                      color: Color(0xFFFFFFFF),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 50,
+                    width: 400,
+                    color: Color.fromARGB(175, 183, 105, 105),
+                    child: Text(
+                      "User Name",
+                      style: GoogleFonts.manrope(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(height: 600),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(padding: EdgeInsets.all(8)),
+                  Container(
+                      alignment: Alignment.center,
+                      height: 250,
+                      width: 250,
+                      decoration: BoxDecoration(
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            offset: Offset(0, 0),
+                            spreadRadius: 1,
+                            blurRadius: 5.0,
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ],
+                        border: Border.all(
+                          width: 1,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                        color: Color(0xFF000000),
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                      ),
+                      child: DropdownIn()),
+                  Padding(padding: EdgeInsets.all(8)),
+                  Container(
+                      alignment: Alignment.center,
+                      height: 250,
+                      width: 250,
+                      decoration: BoxDecoration(
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            offset: Offset(0, 0),
+                            spreadRadius: 1,
+                            blurRadius: 5.0,
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ],
+                        border: Border.all(
+                          width: 1,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                        color: Color(0xFF000000),
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                      ),
+                      child: DropdownOut()),
+                ],
+              ),
+              SizedBox(
+                height: 50,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Container(
                     height: 50,
-                    width: 150,
-                    alignment: Alignment.bottomRight,
+                    width: 200,
+                    alignment: Alignment.center,
                     decoration: BoxDecoration(
                       boxShadow: <BoxShadow>[
                         BoxShadow(
                           offset: Offset(0, 0),
                           spreadRadius: 1,
                           blurRadius: 5.0,
-                          color: Color(0xFFFFFFFF),
+                          color: Color.fromARGB(255, 230, 5, 5),
                         ),
                       ],
                       border: Border.all(
@@ -85,7 +144,7 @@ class GameSpezifikation extends StatelessWidget {
                         color: Color(0xFFFFFFFF),
                       ),
                       color: Color(0xFF000000),
-                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      borderRadius: BorderRadius.all(Radius.circular(100)),
                     ),
                     child: TextButton(
                       onPressed: () {
@@ -99,7 +158,7 @@ class GameSpezifikation extends StatelessWidget {
                         style: GoogleFonts.manrope(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFFEE0E47),
+                          color: Color.fromARGB(242, 255, 255, 255),
                         ),
                       ),
                     ),
