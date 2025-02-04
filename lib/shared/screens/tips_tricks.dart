@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
-import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 
 class Tipps extends StatelessWidget {
   const Tipps({super.key});
