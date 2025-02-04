@@ -12,6 +12,9 @@ dependencies:
   flutter_gen: ^5.8.0
   flutter_svg: ^2.0.17
   google_fonts: ^6.2.1
+  slider_button: ^2.1.0
+  slider_button_component: ^1.0.4
+  
   
 
 dev_dependencies:

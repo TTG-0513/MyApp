@@ -23,21 +23,18 @@ class _SliderExampleState extends State<SliderExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Slider(
-        secondaryActiveColor: Color.fromARGB(255, 9, 228, 78),
-        thumbColor: Color(0xFF000000),
-        activeColor: Color(0xFFEE47E1),
-        value: _currentSliderValue,
-        max: 100,
-        divisions: 10,
-        label: _currentSliderValue.round().toString(),
-        onChanged: (double value) {
-          setState(() {
-            _currentSliderValue = value;
-          });
-        },
-      ),
+    return Slider(
+      thumbColor: Color(0xFFEE047E),
+      activeColor: Color(0xFFEE047E),
+      value: _currentSliderValue,
+      max: 100,
+      divisions: 10,
+      label: _currentSliderValue.round().toString(),
+      onChanged: (double value) {
+        setState(() {
+          _currentSliderValue = value;
+        });
+      },
     );
   }
 }

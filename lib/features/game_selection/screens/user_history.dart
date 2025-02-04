@@ -55,7 +55,11 @@ class UserHistory extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(100))),
                     height: 200,
                     width: 200,
-                    child: Center(child: Text("Hier könnte ihr Bild sein")),
+                    child: Center(
+                        child: SizedBox(
+                            height: 150,
+                            width: 150,
+                            child: Image.asset("assets/images/AppLogo.png"))),
                   ),
                 ],
               ),
