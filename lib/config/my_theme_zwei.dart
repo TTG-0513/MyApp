@@ -5,16 +5,21 @@ void main() {
 }
 
 class MyThemeZwei extends StatelessWidget {
-  const MyThemeZwei({super.key, this.child, this.decoration, this.alignment});
+  const MyThemeZwei({
+    super.key,
+    this.decoration,
+    this.alignment,
+    this.children,
+  });
 
-  final Widget? child;
+  final List<Widget>? children;
   final Decoration? decoration;
   final AlignmentGeometry? alignment;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Container(
+    return Scaffold(
+      body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,

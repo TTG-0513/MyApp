@@ -16,6 +16,7 @@ class GameSpezifikation extends StatelessWidget {
           MyThemeZwei(),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: 40,
@@ -56,14 +57,26 @@ class GameSpezifikation extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: 50,
+                    height: 25,
                     width: 400,
                     color: Color.fromARGB(175, 183, 105, 105),
                     child: Text(
-                      "User Name",
+                      "Dart Legend",
                       style: GoogleFonts.manrope(
                           color: Color(0xFFFFFFFF),
-                          fontSize: 20,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(
+                    height: 25,
+                    width: 400,
+                    color: Color.fromARGB(175, 183, 105, 105),
+                    child: Text(
+                      "Legend-dart@mail.com",
+                      style: GoogleFonts.manrope(
+                          color: Color(0xFFFFFFFF),
+                          fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -73,54 +86,20 @@ class GameSpezifikation extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(padding: EdgeInsets.all(8)),
-                  Container(
-                      alignment: Alignment.center,
-                      height: 250,
-                      width: 250,
-                      decoration: BoxDecoration(
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                            offset: Offset(0, 0),
-                            spreadRadius: 1,
-                            blurRadius: 5.0,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ],
-                        border: Border.all(
-                          width: 1,
-                          color: Color(0xFFFFFFFF),
-                        ),
-                        color: Color(0xFF000000),
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
-                      ),
-                      child: DropdownIn()),
-                  Padding(padding: EdgeInsets.all(8)),
-                  Container(
-                      alignment: Alignment.center,
-                      height: 250,
-                      width: 250,
-                      decoration: BoxDecoration(
-                        boxShadow: <BoxShadow>[
-                          BoxShadow(
-                            offset: Offset(0, 0),
-                            spreadRadius: 1,
-                            blurRadius: 5.0,
-                            color: Color(0xFFFFFFFF),
-                          ),
-                        ],
-                        border: Border.all(
-                          width: 1,
-                          color: Color(0xFFFFFFFF),
-                        ),
-                        color: Color(0xFF000000),
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
-                      ),
-                      child: DropdownOut()),
+                  Padding(padding: EdgeInsets.all(5)),
+                  DropdownPoints(),
+                  SizedBox(
+                    height: 150,
+                  ),
+                  DropdownIn(),
+                  SizedBox(
+                    height: 150,
+                  ),
+                  DropdownOut(),
                 ],
               ),
               SizedBox(
-                height: 50,
+                height: 170,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,

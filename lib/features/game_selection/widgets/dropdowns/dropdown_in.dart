@@ -1,6 +1,62 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+class DropdownPoints extends StatefulWidget {
+  const DropdownPoints({super.key});
+
+  @override
+  State<DropdownPoints> createState() => _DropdownPointsState();
+}
+
+class _DropdownPointsState extends State<DropdownPoints> {
+  List<String> items = ["----", " 101", " 301", " 501", " 701", "1001"];
+  String? selectedItem = "----";
+
+  @override
+  Widget build(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Center(
+            child: Container(
+              alignment: Alignment.topLeft,
+              decoration: BoxDecoration(
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                    offset: Offset(0, 0),
+                    spreadRadius: 1,
+                    blurRadius: 10.0,
+                    color: Color(0xFFEE0E47),
+                  ),
+                ],
+                border: Border.all(
+                  width: 1,
+                  color: Color(0xFFFFFFFF),
+                ),
+                color: Color(0xFF000000),
+                borderRadius: BorderRadius.all(Radius.circular(8)),
+              ),
+              height: 30,
+              width: 70,
+              child: DropdownButton<String>(
+                iconEnabledColor: Color(0xFFEE0E47),
+                dropdownColor: Color(0xFF000000),
+                value: selectedItem,
+                items: items
+                    .map((item) => DropdownMenuItem<String>(
+                          value: item,
+                          child: Text(item,
+                              style: GoogleFonts.manrope(
+                                  fontSize: 20, color: Color(0xFFEE0E47))),
+                        ))
+                    .toList(),
+                onChanged: (item) => setState(() => selectedItem = item),
+              ),
+            ),
+          ),
+        ],
+      );
+}
+
 class DropdownIn extends StatefulWidget {
   const DropdownIn({super.key});
 
@@ -13,19 +69,19 @@ class _DropdownMenueState extends State<DropdownIn> {
   String? selectedItem = "----";
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-          body: Stack(
+  Widget build(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Center(
             child: Container(
-              alignment: Alignment.topCenter,
+              alignment: Alignment.topLeft,
               decoration: BoxDecoration(
                 boxShadow: <BoxShadow>[
                   BoxShadow(
                     offset: Offset(0, 0),
                     spreadRadius: 1,
-                    blurRadius: 5.0,
-                    color: Color(0xFFFFFFFF),
+                    blurRadius: 10.0,
+                    color: Color(0xFFEE0E47),
                   ),
                 ],
                 border: Border.all(
@@ -35,8 +91,8 @@ class _DropdownMenueState extends State<DropdownIn> {
                 color: Color(0xFF000000),
                 borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
-              height: 40,
-              width: 160,
+              height: 30,
+              width: 120,
               child: DropdownButton<String>(
                 iconEnabledColor: Color(0xFFEE0E47),
                 dropdownColor: Color(0xFF000000),
@@ -46,7 +102,7 @@ class _DropdownMenueState extends State<DropdownIn> {
                           value: item,
                           child: Text(item,
                               style: GoogleFonts.manrope(
-                                  fontSize: 24, color: Color(0xFFEE0E47))),
+                                  fontSize: 20, color: Color(0xFFEE0E47))),
                         ))
                     .toList(),
                 onChanged: (item) => setState(() => selectedItem = item),
@@ -54,7 +110,7 @@ class _DropdownMenueState extends State<DropdownIn> {
             ),
           ),
         ],
-      ));
+      );
 }
 
 class DropdownOut extends StatefulWidget {
@@ -69,19 +125,19 @@ class _DropdownOutState extends State<DropdownOut> {
   String? selectedItem = "----";
 
   @override
-  Widget build(BuildContext context) => Scaffold(
-          body: Stack(
+  Widget build(BuildContext context) => Column(
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Center(
             child: Container(
-              alignment: Alignment.topCenter,
+              alignment: Alignment.topLeft,
               decoration: BoxDecoration(
                 boxShadow: <BoxShadow>[
                   BoxShadow(
                     offset: Offset(0, 0),
                     spreadRadius: 1,
-                    blurRadius: 5.0,
-                    color: Color(0xFFFFFFFF),
+                    blurRadius: 10.0,
+                    color: Color(0xFFEE0E47),
                   ),
                 ],
                 border: Border.all(
@@ -91,8 +147,8 @@ class _DropdownOutState extends State<DropdownOut> {
                 color: Color(0xFF000000),
                 borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
-              height: 40,
-              width: 160,
+              height: 30,
+              width: 140,
               child: DropdownButton<String>(
                 iconEnabledColor: Color(0xFFEE0E47),
                 dropdownColor: Color(0xFF000000),
@@ -102,7 +158,7 @@ class _DropdownOutState extends State<DropdownOut> {
                           value: item,
                           child: Text(item,
                               style: GoogleFonts.manrope(
-                                  fontSize: 24, color: Color(0xFFEE0E47))),
+                                  fontSize: 20, color: Color(0xFFEE0E47))),
                         ))
                     .toList(),
                 onChanged: (item) => setState(() => selectedItem = item),
@@ -110,5 +166,5 @@ class _DropdownOutState extends State<DropdownOut> {
             ),
           ),
         ],
-      ));
+      );
 }
