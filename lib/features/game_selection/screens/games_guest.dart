@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
-import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
 import 'package:ldj_app/shared/screens/tips_tricks.dart';
