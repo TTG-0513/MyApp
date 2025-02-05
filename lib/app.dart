@@ -11,6 +11,6 @@ class LDJApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SettingsScreen();
+    return LandingScreen();
   }
 }
