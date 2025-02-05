@@ -61,7 +61,7 @@ class SignupScreen extends StatelessWidget {
               SizedBox(
                 height: 250,
                 width: 250,
-                child: Image.asset("assets/images/ProfilBild.png"),
+                child: Image.asset("assets/images/AvatarImage.png"),
               ),
             ],
           ),

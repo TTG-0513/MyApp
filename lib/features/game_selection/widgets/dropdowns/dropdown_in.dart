@@ -16,41 +16,40 @@ class _DropdownPointsState extends State<DropdownPoints> {
   Widget build(BuildContext context) => Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Center(
-            child: Container(
-              alignment: Alignment.topLeft,
-              decoration: BoxDecoration(
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    offset: Offset(0, 0),
-                    spreadRadius: 1,
-                    blurRadius: 10.0,
-                    color: Color(0xFFEE0E47),
-                  ),
-                ],
-                border: Border.all(
-                  width: 1,
-                  color: Color(0xFFFFFFFF),
+          Container(
+            margin: EdgeInsets.all(5),
+            alignment: Alignment.topLeft,
+            decoration: BoxDecoration(
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  offset: Offset(0, 0),
+                  spreadRadius: 1,
+                  blurRadius: 10.0,
+                  color: Color(0xFFEE0E47),
                 ),
-                color: Color(0xFF000000),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+              ],
+              border: Border.all(
+                width: 1,
+                color: Color(0xFFFFFFFF),
               ),
-              height: 30,
-              width: 70,
-              child: DropdownButton<String>(
-                iconEnabledColor: Color(0xFFEE0E47),
-                dropdownColor: Color(0xFF000000),
-                value: selectedItem,
-                items: items
-                    .map((item) => DropdownMenuItem<String>(
-                          value: item,
-                          child: Text(item,
-                              style: GoogleFonts.manrope(
-                                  fontSize: 20, color: Color(0xFFEE0E47))),
-                        ))
-                    .toList(),
-                onChanged: (item) => setState(() => selectedItem = item),
-              ),
+              color: Color(0xFF000000),
+              borderRadius: BorderRadius.all(Radius.circular(8)),
+            ),
+            height: 30,
+            width: 70,
+            child: DropdownButton<String>(
+              iconEnabledColor: Color(0xFFEE0E47),
+              dropdownColor: Color(0xFF000000),
+              value: selectedItem,
+              items: items
+                  .map((item) => DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(item,
+                            style: GoogleFonts.manrope(
+                                fontSize: 20, color: Color(0xFFEE0E47))),
+                      ))
+                  .toList(),
+              onChanged: (item) => setState(() => selectedItem = item),
             ),
           ),
         ],
@@ -72,41 +71,40 @@ class _DropdownMenueState extends State<DropdownIn> {
   Widget build(BuildContext context) => Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Center(
-            child: Container(
-              alignment: Alignment.topLeft,
-              decoration: BoxDecoration(
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    offset: Offset(0, 0),
-                    spreadRadius: 1,
-                    blurRadius: 10.0,
-                    color: Color(0xFFEE0E47),
-                  ),
-                ],
-                border: Border.all(
-                  width: 1,
-                  color: Color(0xFFFFFFFF),
+          Container(
+            margin: EdgeInsets.all(5),
+            alignment: Alignment.topLeft,
+            decoration: BoxDecoration(
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  offset: Offset(0, 0),
+                  spreadRadius: 1,
+                  blurRadius: 10.0,
+                  color: Color(0xFFEE0E47),
                 ),
-                color: Color(0xFF000000),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+              ],
+              border: Border.all(
+                width: 1,
+                color: Color(0xFFFFFFFF),
               ),
-              height: 30,
-              width: 120,
-              child: DropdownButton<String>(
-                iconEnabledColor: Color(0xFFEE0E47),
-                dropdownColor: Color(0xFF000000),
-                value: selectedItem,
-                items: items
-                    .map((item) => DropdownMenuItem<String>(
-                          value: item,
-                          child: Text(item,
-                              style: GoogleFonts.manrope(
-                                  fontSize: 20, color: Color(0xFFEE0E47))),
-                        ))
-                    .toList(),
-                onChanged: (item) => setState(() => selectedItem = item),
-              ),
+              color: Color(0xFF000000),
+              borderRadius: BorderRadius.all(Radius.circular(8)),
+            ),
+            height: 30,
+            width: 120,
+            child: DropdownButton<String>(
+              iconEnabledColor: Color(0xFFEE0E47),
+              dropdownColor: Color(0xFF000000),
+              value: selectedItem,
+              items: items
+                  .map((item) => DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(item,
+                            style: GoogleFonts.manrope(
+                                fontSize: 20, color: Color(0xFFEE0E47))),
+                      ))
+                  .toList(),
+              onChanged: (item) => setState(() => selectedItem = item),
             ),
           ),
         ],
@@ -128,41 +126,40 @@ class _DropdownOutState extends State<DropdownOut> {
   Widget build(BuildContext context) => Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Center(
-            child: Container(
-              alignment: Alignment.topLeft,
-              decoration: BoxDecoration(
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    offset: Offset(0, 0),
-                    spreadRadius: 1,
-                    blurRadius: 10.0,
-                    color: Color(0xFFEE0E47),
-                  ),
-                ],
-                border: Border.all(
-                  width: 1,
-                  color: Color(0xFFFFFFFF),
+          Container(
+            margin: EdgeInsets.all(5),
+            alignment: Alignment.topLeft,
+            decoration: BoxDecoration(
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                  offset: Offset(0, 0),
+                  spreadRadius: 1,
+                  blurRadius: 10.0,
+                  color: Color(0xFFEE0E47),
                 ),
-                color: Color(0xFF000000),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
+              ],
+              border: Border.all(
+                width: 1,
+                color: Color(0xFFFFFFFF),
               ),
-              height: 30,
-              width: 140,
-              child: DropdownButton<String>(
-                iconEnabledColor: Color(0xFFEE0E47),
-                dropdownColor: Color(0xFF000000),
-                value: selectedItem,
-                items: items
-                    .map((item) => DropdownMenuItem<String>(
-                          value: item,
-                          child: Text(item,
-                              style: GoogleFonts.manrope(
-                                  fontSize: 20, color: Color(0xFFEE0E47))),
-                        ))
-                    .toList(),
-                onChanged: (item) => setState(() => selectedItem = item),
-              ),
+              color: Color(0xFF000000),
+              borderRadius: BorderRadius.all(Radius.circular(8)),
+            ),
+            height: 30,
+            width: 140,
+            child: DropdownButton<String>(
+              iconEnabledColor: Color(0xFFEE0E47),
+              dropdownColor: Color(0xFF000000),
+              value: selectedItem,
+              items: items
+                  .map((item) => DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(item,
+                            style: GoogleFonts.manrope(
+                                fontSize: 20, color: Color(0xFFEE0E47))),
+                      ))
+                  .toList(),
+              onChanged: (item) => setState(() => selectedItem = item),
             ),
           ),
         ],

@@ -57,9 +57,10 @@ class UserHistory extends StatelessWidget {
                     width: 200,
                     child: Center(
                         child: SizedBox(
-                            height: 150,
-                            width: 150,
-                            child: Image.asset("assets/images/AppLogo.png"))),
+                            height: 200,
+                            width: 200,
+                            child:
+                                Image.asset("assets/images/AvatarImage.png"))),
                   ),
                 ],
               ),

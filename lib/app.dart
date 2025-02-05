@@ -4,6 +4,7 @@ import 'package:ldj_app/features/game_selection/repositories/setting_beispiel.da
 import 'package:ldj_app/features/game_selection/repositories/slider_button.dart';
 import 'package:ldj_app/features/game_selection/screens/language_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
+import 'package:ldj_app/features/game_selection/screens/spezial_games.dart';
 import 'package:ldj_app/features/game_selection/screens/user_history.dart';
 import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
 
@@ -12,6 +13,6 @@ class LDJApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GameSpezifikation();
+    return LandingScreen();
   }
 }
