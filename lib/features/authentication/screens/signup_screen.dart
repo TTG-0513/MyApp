@@ -100,6 +100,21 @@ class SignupScreen extends StatelessWidget {
                     style: GoogleFonts.manrope(
                         color: Color(0xFFFFFFFF), fontSize: 15),
                     decoration: InputDecoration(
+                      labelText: "Email",
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 50,
+                  width: 200,
+                  child: TextFormField(
+                    style: GoogleFonts.manrope(
+                        color: Color(0xFFFFFFFF), fontSize: 15),
+                    decoration: InputDecoration(
                       labelText: "Passwort",
                     ),
                   ),

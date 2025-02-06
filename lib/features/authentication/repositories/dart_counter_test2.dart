@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
-import 'package:ldj_app/features/authentication/repositories/dart_counter_test2.dart';
+import 'package:ldj_app/features/authentication/repositories/dart_counter_test.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
 
-class DartCounterTest extends StatelessWidget {
-  const DartCounterTest({super.key});
+class DartCounterTest2 extends StatelessWidget {
+  const DartCounterTest2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class DartCounterTest extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (context) => DartCounterTest2()),
+                              builder: (context) => DartCounterTest()),
                         );
                       },
                       icon: Icon(Icons.ads_click_outlined),
@@ -71,7 +71,7 @@ class DartCounterTest extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(200)),
                     color: Color(0xFFFFFFFF)),
                 child: Text(
-                  "381",
+                  "321",
                   style: GoogleFonts.manrope(
                       fontSize: 100,
                       fontWeight: FontWeight.bold,
@@ -84,7 +84,7 @@ class DartCounterTest extends StatelessWidget {
               Container(
                 alignment: Alignment.topCenter,
                 height: 60,
-                width: 360,
+                width: 390,
                 decoration: BoxDecoration(
                   boxShadow: <BoxShadow>[
                     BoxShadow(
@@ -102,7 +102,7 @@ class DartCounterTest extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(16)),
                 ),
                 child: Text(
-                  "120",
+                  "180",
                   style: GoogleFonts.manrope(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
@@ -114,7 +114,7 @@ class DartCounterTest extends StatelessWidget {
               ),
               Container(
                 height: 360,
-                width: 360,
+                width: 390,
                 decoration: BoxDecoration(
                   boxShadow: <BoxShadow>[
                     BoxShadow(
@@ -244,41 +244,6 @@ class DartCounterTest extends StatelessWidget {
                           child: TextButton(
                             onPressed: () {},
                             child: Text(
-                              "false",
-                              style: GoogleFonts.manrope(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFFEE0E47),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            boxShadow: <BoxShadow>[
-                              BoxShadow(
-                                offset: Offset(0, 0),
-                                spreadRadius: 1,
-                                blurRadius: 5.0,
-                                color: Color(0xFFFFFFFF),
-                              ),
-                            ],
-                            border: Border.all(
-                              width: 1,
-                              color: Color(0xFFFFFFFF),
-                            ),
-                            color: Color(0xFF000000),
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
-                          ),
-                          child: TextButton(
-                            onPressed: () {},
-                            child: Text(
                               "4",
                               style: GoogleFonts.manrope(
                                 fontSize: 25,
@@ -306,16 +271,23 @@ class DartCounterTest extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(8)),
                           ),
                           child: TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                "5",
-                                style: GoogleFonts.manrope(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFFEE0E47),
-                                ),
-                              )),
+                            onPressed: () {},
+                            child: Text(
+                              "5",
+                              style: GoogleFonts.manrope(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFFEE0E47),
+                              ),
+                            ),
+                          ),
                         ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                         Container(
                           decoration: BoxDecoration(
                             boxShadow: <BoxShadow>[
@@ -364,48 +336,13 @@ class DartCounterTest extends StatelessWidget {
                           child: TextButton(
                               onPressed: () {},
                               child: Text(
-                                "Double",
+                                "7",
                                 style: GoogleFonts.manrope(
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold,
                                   color: Color(0xFFEE0E47),
                                 ),
                               )),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            boxShadow: <BoxShadow>[
-                              BoxShadow(
-                                offset: Offset(0, 0),
-                                spreadRadius: 1,
-                                blurRadius: 5.0,
-                                color: Color(0xFFFFFFFF),
-                              ),
-                            ],
-                            border: Border.all(
-                              width: 1,
-                              color: Color(0xFFFFFFFF),
-                            ),
-                            color: Color(0xFF000000),
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
-                          ),
-                          child: TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              "7",
-                              style: GoogleFonts.manrope(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFFEE0E47),
-                              ),
-                            ),
-                          ),
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -453,15 +390,16 @@ class DartCounterTest extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(8)),
                           ),
                           child: TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                "9",
-                                style: GoogleFonts.manrope(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xFFEE0E47),
-                                ),
-                              )),
+                            onPressed: () {},
+                            child: Text(
+                              "9",
+                              style: GoogleFonts.manrope(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFFEE0E47),
+                              ),
+                            ),
+                          ),
                         ),
                         Container(
                           decoration: BoxDecoration(
@@ -483,7 +421,7 @@ class DartCounterTest extends StatelessWidget {
                           child: TextButton(
                               onPressed: () {},
                               child: Text(
-                                "Triple",
+                                "10",
                                 style: GoogleFonts.manrope(
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold,
@@ -515,11 +453,67 @@ class DartCounterTest extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(8)),
                           ),
                           child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "11",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "12",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
                             onPressed: () {},
                             child: Text(
-                              "<",
+                              "13",
                               style: GoogleFonts.manrope(
-                                fontSize: 35,
+                                fontSize: 25,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xFFEE0E47),
                               ),
@@ -546,7 +540,7 @@ class DartCounterTest extends StatelessWidget {
                           child: TextButton(
                               onPressed: () {},
                               child: Text(
-                                "0",
+                                "14",
                                 style: GoogleFonts.manrope(
                                   fontSize: 25,
                                   fontWeight: FontWeight.bold,
@@ -582,6 +576,12 @@ class DartCounterTest extends StatelessWidget {
                                 ),
                               )),
                         ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
                         Container(
                           decoration: BoxDecoration(
                             boxShadow: <BoxShadow>[
@@ -602,16 +602,274 @@ class DartCounterTest extends StatelessWidget {
                           child: TextButton(
                               onPressed: () {},
                               child: Text(
-                                "+",
+                                "16",
                                 style: GoogleFonts.manrope(
-                                  fontSize: 35,
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "17",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "18",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "19",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "20",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 25,
                                   fontWeight: FontWeight.bold,
                                   color: Color(0xFFEE0E47),
                                 ),
                               )),
                         ),
                       ],
-                    )
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "False",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "Double",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "Triple",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "25",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                offset: Offset(0, 0),
+                                spreadRadius: 1,
+                                blurRadius: 5.0,
+                                color: Color(0xFFFFFFFF),
+                              ),
+                            ],
+                            border: Border.all(
+                              width: 1,
+                              color: Color(0xFFFFFFFF),
+                            ),
+                            color: Color(0xFF000000),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                          ),
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "<",
+                                style: GoogleFonts.manrope(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFFEE0E47),
+                                ),
+                              )),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               )

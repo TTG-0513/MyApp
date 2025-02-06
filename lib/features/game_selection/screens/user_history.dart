@@ -48,6 +48,8 @@ class UserHistory extends StatelessWidget {
                 ],
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Container(
                     decoration: BoxDecoration(
@@ -61,6 +63,32 @@ class UserHistory extends StatelessWidget {
                             width: 200,
                             child:
                                 Image.asset("assets/images/AvatarImage.png"))),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                          offset: Offset(0, 0),
+                          spreadRadius: 1,
+                          blurRadius: 5.0,
+                          color: Color(0xFFFFFFFF),
+                        ),
+                      ],
+                      border: Border.all(
+                        width: 1,
+                        color: Color(0xFFFFFFFF),
+                      ),
+                      color: Color(0xFF000000),
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                    ),
+                    height: 30,
+                    width: 190,
+                    child: Text(
+                      "Account löschen",
+                      style: GoogleFonts.manrope(
+                          fontSize: 20, color: Color(0xFFFFFFFF)),
+                    ),
                   ),
                 ],
               ),
