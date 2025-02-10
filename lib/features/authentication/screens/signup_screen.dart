@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
+import 'package:ldj_app/features/authentication/widgets/email_field.dart';
+import 'package:ldj_app/features/authentication/widgets/name_field.dart';
+import 'package:ldj_app/features/authentication/widgets/passwort_field.dart';
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
-import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -17,36 +20,7 @@ class SignupScreen extends StatelessWidget {
             SizedBox(
               height: 60,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(
-                  height: 70,
-                  width: 60,
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    icon: Icon(Icons.arrow_back),
-                    color: Color(0xFFFFFFFF),
-                  ),
-                ),
-                SizedBox(
-                  height: 70,
-                  width: 60,
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => SettingsScreen()),
-                      );
-                    },
-                    icon: Icon(Icons.settings),
-                    color: Color(0xFFFFFFFF),
-                  ),
-                ),
-              ],
-            ),
+            TopBarIcons(),
           ],
         ),
         Padding(
@@ -77,48 +51,15 @@ class SignupScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 50,
-                  width: 200,
-                  child: TextFormField(
-                    style: GoogleFonts.manrope(
-                        color: Color(0xFFFFFFFF), fontSize: 15),
-                    decoration: InputDecoration(
-                      labelText: "Name",
-                    ),
-                  ),
-                ),
+                child: NameField(),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 50,
-                  width: 200,
-                  child: TextFormField(
-                    style: GoogleFonts.manrope(
-                        color: Color(0xFFFFFFFF), fontSize: 15),
-                    decoration: InputDecoration(
-                      labelText: "Email",
-                    ),
-                  ),
-                ),
+                child: EmailField(),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 50,
-                  width: 200,
-                  child: TextFormField(
-                    style: GoogleFonts.manrope(
-                        color: Color(0xFFFFFFFF), fontSize: 15),
-                    decoration: InputDecoration(
-                      labelText: "Passwort",
-                    ),
-                  ),
-                ),
+                child: PasswortField(),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

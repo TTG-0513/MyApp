@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_eins.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 import 'package:ldj_app/features/authentication/screens/signup_screen.dart';
+import 'package:ldj_app/features/authentication/widgets/name_field.dart';
+import 'package:ldj_app/features/authentication/widgets/passwort_field.dart';
 import 'package:ldj_app/features/game_selection/screens/games_guest.dart';
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
@@ -69,33 +70,11 @@ class LandingScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 50,
-                  width: 200,
-                  child: TextFormField(
-                    style: GoogleFonts.manrope(
-                        color: Color(0xFFFFFFFF), fontSize: 15),
-                    decoration: InputDecoration(
-                      labelText: "Name",
-                    ),
-                  ),
-                ),
+                child: NameField(),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 50,
-                  width: 200,
-                  child: TextFormField(
-                    style: GoogleFonts.manrope(
-                        color: Color(0xFFFFFFFF), fontSize: 15),
-                    decoration: InputDecoration(
-                      labelText: "Passwort",
-                    ),
-                  ),
-                ),
+                child: PasswortField(),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),

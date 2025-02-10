@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
-import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
 
 class SpezialGames extends StatelessWidget {
   const SpezialGames({super.key});
@@ -20,36 +20,7 @@ class SpezialGames extends StatelessWidget {
                   SizedBox(
                     height: 30,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        height: 70,
-                        width: 60,
-                        child: IconButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          icon: Icon(Icons.arrow_back),
-                          color: Color(0xFFFFFFFF),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 70,
-                        width: 60,
-                        child: IconButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) => SettingsScreen()),
-                            );
-                          },
-                          icon: Icon(Icons.settings),
-                          color: Color(0xFFFFFFFF),
-                        ),
-                      ),
-                    ],
-                  ),
+                  TopBarIcons(),
                   Padding(padding: EdgeInsets.all(5)),
                   Container(
                     height: 30,

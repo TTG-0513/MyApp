@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
-import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/spezial_games.dart';
 import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
 import 'package:ldj_app/shared/screens/tips_tricks.dart';
 
 class GamesGuestScreen extends StatelessWidget {
@@ -21,36 +21,7 @@ class GamesGuestScreen extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    height: 70,
-                    width: 60,
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      icon: Icon(Icons.arrow_back),
-                      color: Color(0xFFFFFFFF),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 70,
-                    width: 60,
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => SettingsScreen()),
-                        );
-                      },
-                      icon: Icon(Icons.settings),
-                      color: Color(0xFFFFFFFF),
-                    ),
-                  ),
-                ],
-              ),
+              TopBarIcons(),
               SizedBox(
                 height: 20,
               ),

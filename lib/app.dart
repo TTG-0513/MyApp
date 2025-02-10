@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ldj_app/features/authentication/screens/landing_screen.dart';
+import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 
 class LDJApp extends StatelessWidget {
   const LDJApp({super.key});

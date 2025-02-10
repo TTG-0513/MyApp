@@ -18,7 +18,7 @@ class SettingsScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
-                height: 70,
+                height: 40,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -48,7 +48,6 @@ class SettingsScreen extends StatelessWidget {
                         fontSize: 20,
                         color: Color(0xFFFFFFFF)),
                   ),
-                  Padding(padding: EdgeInsets.all(5)),
                   Container(
                     decoration: BoxDecoration(
                       boxShadow: <BoxShadow>[
@@ -86,7 +85,6 @@ class SettingsScreen extends StatelessWidget {
                         fontSize: 20,
                         color: Color(0xFFFFFFFF)),
                   ),
-                  Padding(padding: EdgeInsets.all(5)),
                   Container(
                     decoration: BoxDecoration(
                       boxShadow: <BoxShadow>[
@@ -124,7 +122,6 @@ class SettingsScreen extends StatelessWidget {
                         fontSize: 20,
                         color: Color(0xFFFFFFFF)),
                   ),
-                  Padding(padding: EdgeInsets.all(5)),
                   Container(
                     decoration: BoxDecoration(
                       boxShadow: <BoxShadow>[
