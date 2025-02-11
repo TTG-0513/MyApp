@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ldj_app/features/game_selection/models/color_app.dart';
 
 class MyAppTheme {
   ThemeData get theme => ThemeData(

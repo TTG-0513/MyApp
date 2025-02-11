@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_eins.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 import 'package:ldj_app/features/authentication/screens/signup_screen.dart';
@@ -8,8 +9,24 @@ import 'package:ldj_app/features/game_selection/screens/games_guest.dart';
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 
-class LandingScreen extends StatelessWidget {
+class LandingScreen extends StatefulWidget {
   const LandingScreen({super.key});
+
+  @override
+  State<LandingScreen> createState() => _LandingScreenState();
+}
+
+class _LandingScreenState extends State<LandingScreen> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwortController = TextEditingController();
+  bool _isObscure = true;
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwortController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,11 +87,46 @@ class LandingScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: NameField(),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 50,
+                  width: 250,
+                  child: TextFormField(
+                    controller: emailController,
+                    style: GoogleFonts.manrope(
+                        color: Color(0xFFFFFFFF), fontSize: 15),
+                    decoration: InputDecoration(
+                      labelText: "Name",
+                    ),
+                  ),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: PasswortField(),
+                child: Container(
+                  alignment: Alignment.center,
+                  height: 50,
+                  width: 250,
+                  child: TextFormField(
+                    style: GoogleFonts.manrope(
+                        color: Color(0xFFFFFFFF), fontSize: 15),
+                    obscureText: _isObscure,
+                    controller: passwortController,
+                    decoration: InputDecoration(
+                      labelText: 'Passwort',
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _isObscure ? Icons.visibility : Icons.visibility_off,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _isObscure = !_isObscure;
+                          });
+                        },
+                      ),
+                    ),
+                  ),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -82,6 +134,14 @@ class LandingScreen extends StatelessWidget {
                   children: [
                     FilledButton(
                       onPressed: () {
+                        final email = emailController.text;
+                        final passwort = passwortController.text;
+                        print('Die Email $email das Passwort $passwort');
+                        if (email != passwort) {
+                          emailController.clear();
+                          passwortController.clear();
+                          return;
+                        }
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) => GamesScreen(),
