@@ -21,7 +21,7 @@ class _LandingScreenState extends State<LandingScreen> {
   final TextEditingController passwortController = TextEditingController();
   bool _isObscure = true;
 
-  @override
+  @override //immer die Controller Disposen also löschen/bereinigen/säubern
   void dispose() {
     emailController.dispose();
     passwortController.dispose();
