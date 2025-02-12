@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		4J6P+zGYw9M8hdijETFlYydMa1w=
+		LbDGQAAAas5nW1KaztmgxIjQ81I=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		wdjiMiQi5D6BCDphGGQNMkTdqdQ=
+		RWAQug5ce9wyCmcspeV64iQVOjE=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -96,6 +96,10 @@
 		<data>
 		QIy0242hv1E7r5GXmZVoo6HLIUw=
 		</data>
+		<key>flutter_assets/assets/images/Troph%C3%A4e%203%20Pfeile.png</key>
+		<data>
+		xGho9HZZiN4LSMzOfHanzWEGPMM=
+		</data>
 		<key>flutter_assets/assets/images/Tropha%CC%88e%203%20Pfeile.png</key>
 		<data>
 		xGho9HZZiN4LSMzOfHanzWEGPMM=
@@ -114,7 +118,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		b+bffrKpt4LrrcllvjG02ZjQuG8=
+		DOGr6b8O46R6+7vBJaVjmTGA/FQ=
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -131,14 +135,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/96Ok3uPy2gfRIKva+mUd9xDuAmA3A+2/Ir4bhsvQy8=
+			/USoK3G6HlYqeJqtR8bEd5OGfyL/+WKtUMupyRTYtgw=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d28kzViiiyJfP/7m7G+1gflOyqmMy56F1zci0WEHPEM=
+			SLbgOUsMiLd9ClX6MXBYsSzX3kOCgBwR72rBjMexFgg=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -274,6 +278,13 @@
 			FQ0YvLBAB4tuIDe9uEufe2DN6cdKIYu9nIIQiwYRdBw=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/images/Troph%C3%A4e%203%20Pfeile.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Y3COKRLxSO3l5f8tfed0TPoA1G8xV9ycusKp5qU98Do=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/images/Tropha%CC%88e%203%20Pfeile.png</key>
 		<dict>
 			<key>hash2</key>
@@ -306,7 +317,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sk5/w1J5GgU9tBfUN5Ju9Hf1r5ns3Wmj0qETosabA3Q=
+			xNoOKR/Z1T0GFWLjM7/HKDBoGruUHF6K6CS3NgwyzPc=
 			</data>
 		</dict>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>

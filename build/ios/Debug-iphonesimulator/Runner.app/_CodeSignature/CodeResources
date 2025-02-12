@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		BqkAopnLhowH9ojY0XH9uCkD8E8=
+		qWbTv0F1QAL7bUNxH7dMg0mp7CQ=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		LD8IQdf3U/Hp8Mz5nBqFHLL6O44=
+		QqQI8k75Yy0o8x9UYyc/k+vEyFo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		4J6P+zGYw9M8hdijETFlYydMa1w=
+		LbDGQAAAas5nW1KaztmgxIjQ81I=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		wdjiMiQi5D6BCDphGGQNMkTdqdQ=
+		RWAQug5ce9wyCmcspeV64iQVOjE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -140,6 +140,10 @@
 		<data>
 		QIy0242hv1E7r5GXmZVoo6HLIUw=
 		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/Troph%C3%A4e%203%20Pfeile.png</key>
+		<data>
+		xGho9HZZiN4LSMzOfHanzWEGPMM=
+		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/Tropha%CC%88e%203%20Pfeile.png</key>
 		<data>
 		xGho9HZZiN4LSMzOfHanzWEGPMM=
@@ -158,7 +162,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		b+bffrKpt4LrrcllvjG02ZjQuG8=
+		DOGr6b8O46R6+7vBJaVjmTGA/FQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -270,7 +274,7 @@
 		</data>
 		<key>Frameworks/device_info_plus.framework/device_info_plus</key>
 		<data>
-		DCNLtLLBlPsgdT+2otuZF+m/Slk=
+		e64XxS9PZRFu9rZWjHKabtIg93g=
 		</data>
 		<key>Frameworks/device_info_plus.framework/device_info_plus_privacy.bundle/Info.plist</key>
 		<data>
@@ -290,7 +294,7 @@
 		</data>
 		<key>Frameworks/flutter_native_splash.framework/flutter_native_splash</key>
 		<data>
-		vjB8J4Em8AEk/qrUYth31kvujfA=
+		aarpajqvht9j44K6V9R8cGvL5Eo=
 		</data>
 		<key>Frameworks/flutter_native_splash.framework/flutter_native_splash_privacy.bundle/Info.plist</key>
 		<data>
@@ -310,7 +314,7 @@
 		</data>
 		<key>Frameworks/path_provider_foundation.framework/path_provider_foundation</key>
 		<data>
-		KAxvEw2dZ01kqrGp25M2jYhdaAQ=
+		hP7DuqkdW2YmJ3rEGCN8IFzVyn8=
 		</data>
 		<key>Frameworks/path_provider_foundation.framework/path_provider_foundation_privacy.bundle/Info.plist</key>
 		<data>
@@ -330,7 +334,7 @@
 		</data>
 		<key>Frameworks/vibration.framework/vibration</key>
 		<data>
-		R+vO/Cz6s77WHI2HyTw9x1lM/zw=
+		wMiN1R3v8YJ1BCYJhUQDfe2AarM=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -342,7 +346,7 @@
 		</data>
 		<key>Runner.debug.dylib</key>
 		<data>
-		8ZsNE71IwaDQsZIbQhD1vuV4fgY=
+		q5RbvImvAlDXHYqwQ5W5nygUrII=
 		</data>
 		<key>__preview.dylib</key>
 		<data>
@@ -425,7 +429,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			l+f85uNp+ROfhUC5lAVUpKUM/WCUPyX/ZYmnDCOztvQ=
+			jMcZrKUhSggCLFbNZqL5S2hCCExxJditWW6gkHXf32A=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -439,21 +443,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7CPVoFqtUDopFVK2Yyap8v0DW8TgCfxBHTnbvGpn30s=
+			O8iQ5uR1+6csbeX+ik57YShT5wf7Eobtxi2dpxscw3A=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/96Ok3uPy2gfRIKva+mUd9xDuAmA3A+2/Ir4bhsvQy8=
+			/USoK3G6HlYqeJqtR8bEd5OGfyL/+WKtUMupyRTYtgw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d28kzViiiyJfP/7m7G+1gflOyqmMy56F1zci0WEHPEM=
+			SLbgOUsMiLd9ClX6MXBYsSzX3kOCgBwR72rBjMexFgg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -589,6 +593,13 @@
 			FQ0YvLBAB4tuIDe9uEufe2DN6cdKIYu9nIIQiwYRdBw=
 			</data>
 		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/images/Troph%C3%A4e%203%20Pfeile.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Y3COKRLxSO3l5f8tfed0TPoA1G8xV9ycusKp5qU98Do=
+			</data>
+		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/Tropha%CC%88e%203%20Pfeile.png</key>
 		<dict>
 			<key>hash2</key>
@@ -621,7 +632,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sk5/w1J5GgU9tBfUN5Ju9Hf1r5ns3Wmj0qETosabA3Q=
+			xNoOKR/Z1T0GFWLjM7/HKDBoGruUHF6K6CS3NgwyzPc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/shaders/ink_sparkle.frag</key>
@@ -817,7 +828,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			GdGqrtzOSIG0hbf2N7Lkcz0XnRy4OwRN5NYbJ6vDJ0Y=
+			0isb4aeq8nW8dIvQ9nf+G23ewMmGBeAs4THcLzoc4No=
 			</data>
 		</dict>
 		<key>Frameworks/device_info_plus.framework/device_info_plus_privacy.bundle/Info.plist</key>
@@ -852,7 +863,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			niCTYoB9/GIF5r8noUWHxB0Py4sTS/DbOlKWlhWyAqA=
+			k4g/ci3Z7ZT/CHlCCaum0ECHhhPMcgn/WXX9n53BE4I=
 			</data>
 		</dict>
 		<key>Frameworks/flutter_native_splash.framework/flutter_native_splash_privacy.bundle/Info.plist</key>
@@ -887,7 +898,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			z7r3Ay2SxrGttN2tlVtP+wBgpH8LLbt7REJ2vlMNLOc=
+			M9htzYbGXUcfu4/T8MzvIdFEZ/10qqU9+xEko+jm9xQ=
 			</data>
 		</dict>
 		<key>Frameworks/path_provider_foundation.framework/path_provider_foundation_privacy.bundle/Info.plist</key>
@@ -922,14 +933,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VbpjTJvMuw5E/jPeZriCoJwjKUSGeDkRK2zxUOX17PQ=
+			092MuVblflCrZxMqO1j+XqHW8y9FKnT7gAM8Gfg/Bfc=
 			</data>
 		</dict>
 		<key>Runner.debug.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			m++kdOF6NxoOyB1wHg1Z8+W8PM3k3hkX2RrBTdB88Fo=
+			w7BctkQoifQV3OzlvtflWMQjfgQI2PKTykwar2u2FE0=
 			</data>
 		</dict>
 		<key>__preview.dylib</key>
