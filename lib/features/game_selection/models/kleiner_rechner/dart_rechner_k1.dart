@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_tasten_klein.dart';
 
 class DartRechnerK1 extends StatelessWidget {
   const DartRechnerK1({
@@ -12,23 +13,9 @@ class DartRechnerK1 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                offset: Offset(0, 0),
-                spreadRadius: 1,
-                blurRadius: 5.0,
-                color: Color(0xFFFFFFFF),
-              ),
-            ],
-            border: Border.all(
-              width: 1,
-              color: Color(0xFFFFFFFF),
-            ),
-            color: Color(0xFF000000),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-          ),
+        MyTastenKlein(
+          height: 60,
+          width: 65,
           child: TextButton(
             onPressed: () {},
             child: Text(
@@ -41,79 +28,39 @@ class DartRechnerK1 extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                offset: Offset(0, 0),
-                spreadRadius: 1,
-                blurRadius: 5.0,
-                color: Color(0xFFFFFFFF),
-              ),
-            ],
-            border: Border.all(
-              width: 1,
-              color: Color(0xFFFFFFFF),
-            ),
-            color: Color(0xFF000000),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-          ),
+        MyTastenKlein(
+          height: 60,
+          width: 65,
           child: TextButton(
-              onPressed: () {},
-              child: Text(
-                "2",
-                style: GoogleFonts.manrope(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFEE0E47),
-                ),
-              )),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                offset: Offset(0, 0),
-                spreadRadius: 1,
-                blurRadius: 5.0,
-                color: Color(0xFFFFFFFF),
+            onPressed: () {},
+            child: Text(
+              "2",
+              style: GoogleFonts.manrope(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFEE0E47),
               ),
-            ],
-            border: Border.all(
-              width: 1,
-              color: Color(0xFFFFFFFF),
             ),
-            color: Color(0xFF000000),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
+        ),
+        MyTastenKlein(
+          height: 60,
+          width: 65,
           child: TextButton(
-              onPressed: () {},
-              child: Text(
-                "3",
-                style: GoogleFonts.manrope(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFEE0E47),
-                ),
-              )),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                offset: Offset(0, 0),
-                spreadRadius: 1,
-                blurRadius: 5.0,
-                color: Color(0xFFFFFFFF),
+            onPressed: () {},
+            child: Text(
+              "3",
+              style: GoogleFonts.manrope(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFEE0E47),
               ),
-            ],
-            border: Border.all(
-              width: 1,
-              color: Color(0xFFFFFFFF),
             ),
-            color: Color(0xFF000000),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
+        ),
+        MyTastenKlein(
+          height: 60,
+          width: 115,
           child: TextButton(
             onPressed: () {},
             child: Text(

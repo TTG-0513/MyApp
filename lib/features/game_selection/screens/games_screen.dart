@@ -4,6 +4,7 @@ import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/spezial_games.dart';
 import 'package:ldj_app/features/game_selection/screens/user_history.dart';
 import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_container.dart';
 import 'package:ldj_app/shared/screens/tips_tricks.dart';
 
 class GamesScreen extends StatelessWidget {
@@ -55,35 +56,9 @@ class GamesScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                alignment: Alignment.center,
+              MyContainer(
                 height: 60,
                 width: 220,
-                decoration: BoxDecoration(
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      offset: Offset(0, 0),
-                      spreadRadius: 1,
-                      blurRadius: 5.0,
-                      color: Color(0xFFFFFFFF),
-                    ),
-                  ],
-                  border: Border.all(
-                    width: 3,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xFF000000),
-                      Color(0xFF000000),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -105,35 +80,9 @@ class GamesScreen extends StatelessWidget {
                 ),
               ),
               Padding(padding: EdgeInsets.all(5)),
-              Container(
-                alignment: Alignment.center,
-                height: 60,
+              MyContainer(
                 width: 220,
-                decoration: BoxDecoration(
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      offset: Offset(0, 0),
-                      spreadRadius: 1,
-                      blurRadius: 5.0,
-                      color: Color(0xFFFFFFFF),
-                    ),
-                  ],
-                  border: Border.all(
-                    width: 3,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xFF000000),
-                      Color(0xFF000000),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
+                height: 60,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -155,35 +104,9 @@ class GamesScreen extends StatelessWidget {
                 ),
               ),
               Padding(padding: EdgeInsets.all(5)),
-              Container(
-                alignment: Alignment.center,
-                height: 60,
+              MyContainer(
                 width: 220,
-                decoration: BoxDecoration(
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      offset: Offset(0, 0),
-                      spreadRadius: 1,
-                      blurRadius: 5.0,
-                      color: Color(0xFFFFFFFF),
-                    ),
-                  ],
-                  border: Border.all(
-                    width: 3,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xFF000000),
-                      Color(0xFF000000),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
+                height: 60,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -205,35 +128,9 @@ class GamesScreen extends StatelessWidget {
                 ),
               ),
               Padding(padding: EdgeInsets.all(5)),
-              Container(
-                alignment: Alignment.center,
-                height: 60,
+              MyContainer(
                 width: 220,
-                decoration: BoxDecoration(
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      offset: Offset(0, 0),
-                      spreadRadius: 1,
-                      blurRadius: 5.0,
-                      color: Color(0xFFFFFFFF),
-                    ),
-                  ],
-                  border: Border.all(
-                    width: 3,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xFF000000),
-                      Color(0xFF000000),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
+                height: 60,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(

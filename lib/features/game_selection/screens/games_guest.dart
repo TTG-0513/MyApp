@@ -3,6 +3,7 @@ import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/game_selection/screens/spezial_games.dart';
 import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_container.dart';
 import 'package:ldj_app/shared/screens/tips_tricks.dart';
 
 class GamesGuestScreen extends StatelessWidget {
@@ -25,35 +26,9 @@ class GamesGuestScreen extends StatelessWidget {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                alignment: Alignment.center,
+              MyContainer(
                 height: 60,
                 width: 220,
-                decoration: BoxDecoration(
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      offset: Offset(0, 0),
-                      spreadRadius: 1,
-                      blurRadius: 5.0,
-                      color: Color(0xFFFFFFFF),
-                    ),
-                  ],
-                  border: Border.all(
-                    width: 3,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xFF000000),
-                      Color(0xFF000000),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -65,7 +40,7 @@ class GamesGuestScreen extends StatelessWidget {
                   },
                   child: Center(
                     child: Text(
-                      "Spiel",
+                      "Spiele",
                       style: TextStyle(
                           color: Color(0xFFEE0E47),
                           fontSize: 20,
@@ -75,35 +50,9 @@ class GamesGuestScreen extends StatelessWidget {
                 ),
               ),
               Padding(padding: EdgeInsets.all(5)),
-              Container(
-                alignment: Alignment.center,
+              MyContainer(
                 height: 60,
                 width: 220,
-                decoration: BoxDecoration(
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      offset: Offset(0, 0),
-                      spreadRadius: 1,
-                      blurRadius: 5.0,
-                      color: Color(0xFFFFFFFF),
-                    ),
-                  ],
-                  border: Border.all(
-                    width: 3,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xFF000000),
-                      Color(0xFF000000),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -125,35 +74,9 @@ class GamesGuestScreen extends StatelessWidget {
                 ),
               ),
               Padding(padding: EdgeInsets.all(5)),
-              Container(
-                alignment: Alignment.center,
-                height: 60,
+              MyContainer(
                 width: 220,
-                decoration: BoxDecoration(
-                  boxShadow: <BoxShadow>[
-                    BoxShadow(
-                      offset: Offset(0, 0),
-                      spreadRadius: 1,
-                      blurRadius: 5.0,
-                      color: Color(0xFFFFFFFF),
-                    ),
-                  ],
-                  border: Border.all(
-                    width: 3,
-                    color: Color(0xFFFFFFFF),
-                  ),
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color(0xFF000000),
-                      Color(0xFF000000),
-                    ],
-                  ),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(16),
-                  ),
-                ),
+                height: 60,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_container.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_tasten_klein.dart';
 
 class DartRechnerB1 extends StatelessWidget {
   const DartRechnerB1({
@@ -12,23 +14,9 @@ class DartRechnerB1 extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                offset: Offset(0, 0),
-                spreadRadius: 1,
-                blurRadius: 5.0,
-                color: Color(0xFFFFFFFF),
-              ),
-            ],
-            border: Border.all(
-              width: 1,
-              color: Color(0xFFFFFFFF),
-            ),
-            color: Color(0xFF000000),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-          ),
+        MyTastenKlein(
+          height: 55,
+          width: 65,
           child: TextButton(
             onPressed: () {},
             child: Text(
@@ -41,23 +29,9 @@ class DartRechnerB1 extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                offset: Offset(0, 0),
-                spreadRadius: 1,
-                blurRadius: 5.0,
-                color: Color(0xFFFFFFFF),
-              ),
-            ],
-            border: Border.all(
-              width: 1,
-              color: Color(0xFFFFFFFF),
-            ),
-            color: Color(0xFF000000),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-          ),
+        MyTastenKlein(
+          height: 55,
+          width: 65,
           child: TextButton(
               onPressed: () {},
               child: Text(
@@ -69,23 +43,9 @@ class DartRechnerB1 extends StatelessWidget {
                 ),
               )),
         ),
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                offset: Offset(0, 0),
-                spreadRadius: 1,
-                blurRadius: 5.0,
-                color: Color(0xFFFFFFFF),
-              ),
-            ],
-            border: Border.all(
-              width: 1,
-              color: Color(0xFFFFFFFF),
-            ),
-            color: Color(0xFF000000),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-          ),
+        MyTastenKlein(
+          height: 55,
+          width: 65,
           child: TextButton(
               onPressed: () {},
               child: Text(
@@ -97,23 +57,9 @@ class DartRechnerB1 extends StatelessWidget {
                 ),
               )),
         ),
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                offset: Offset(0, 0),
-                spreadRadius: 1,
-                blurRadius: 5.0,
-                color: Color(0xFFFFFFFF),
-              ),
-            ],
-            border: Border.all(
-              width: 1,
-              color: Color(0xFFFFFFFF),
-            ),
-            color: Color(0xFF000000),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-          ),
+        MyTastenKlein(
+          height: 55,
+          width: 65,
           child: TextButton(
             onPressed: () {},
             child: Text(
@@ -126,23 +72,9 @@ class DartRechnerB1 extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          decoration: BoxDecoration(
-            boxShadow: <BoxShadow>[
-              BoxShadow(
-                offset: Offset(0, 0),
-                spreadRadius: 1,
-                blurRadius: 5.0,
-                color: Color(0xFFFFFFFF),
-              ),
-            ],
-            border: Border.all(
-              width: 1,
-              color: Color(0xFFFFFFFF),
-            ),
-            color: Color(0xFF000000),
-            borderRadius: BorderRadius.all(Radius.circular(8)),
-          ),
+        MyTastenKlein(
+          height: 55,
+          width: 65,
           child: TextButton(
             onPressed: () {},
             child: Text(
