@@ -17,10 +17,14 @@ class _SliderButtonState extends State<LightDarkSlider> {
         child: Container(
             height: 80,
             width: 250,
-            color: Color.fromARGB(255, 9, 193, 70),
+            color: Color(0xFF000000),
             child: SliderButton(
               height: 90,
-              action: () async {},
+              action: () async {
+                return Future.delayed(const Duration(seconds: 1), () {
+                  return false;
+                });
+              },
               label: Text(
                 "Dark",
                 style: GoogleFonts.manrope(fontSize: 17),
