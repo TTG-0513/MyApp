@@ -15,7 +15,7 @@ class _NameFieldState extends State<NameField> {
 
   @override
   void dispose() {
-    print('Email is Clear');
+    //print('Email is Clear');
     emailController.dispose();
     super.dispose();
   }

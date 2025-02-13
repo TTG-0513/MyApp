@@ -134,7 +134,7 @@ class _LandingScreenState extends State<LandingScreen> {
                       onPressed: () {
                         final email = emailController.text;
                         final passwort = passwortController.text;
-                        print('Die Email $email das Passwort $passwort');
+                        //print('Die Email $email das Passwort $passwort');
                         if (email != passwort) {
                           emailController.clear();
                           passwortController.clear();

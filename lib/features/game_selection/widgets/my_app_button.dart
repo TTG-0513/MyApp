@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
 
 class MyAppButton extends StatelessWidget {
   const MyAppButton({

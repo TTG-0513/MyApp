@@ -15,7 +15,6 @@ class _PasswortFieldState extends State<PasswortField> {
   bool _isObscure = true;
   @override
   void dispose() {
-    print('Passwort Clear');
     passwortController.dispose();
     super.dispose();
   }

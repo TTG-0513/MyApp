@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ldj_app/features/game_selection/widgets/my_container.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_tasten_klein.dart';
 
 class DartRechnerB1 extends StatelessWidget {
@@ -33,29 +32,31 @@ class DartRechnerB1 extends StatelessWidget {
           height: 55,
           width: 65,
           child: TextButton(
-              onPressed: () {},
-              child: Text(
-                "2",
-                style: GoogleFonts.manrope(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFEE0E47),
-                ),
-              )),
+            onPressed: () {},
+            child: Text(
+              "2",
+              style: GoogleFonts.manrope(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFEE0E47),
+              ),
+            ),
+          ),
         ),
         MyTastenKlein(
           height: 55,
           width: 65,
           child: TextButton(
-              onPressed: () {},
-              child: Text(
-                "3",
-                style: GoogleFonts.manrope(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFFEE0E47),
-                ),
-              )),
+            onPressed: () {},
+            child: Text(
+              "3",
+              style: GoogleFonts.manrope(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFFEE0E47),
+              ),
+            ),
+          ),
         ),
         MyTastenKlein(
           height: 55,

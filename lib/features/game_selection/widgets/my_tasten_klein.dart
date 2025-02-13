@@ -9,7 +9,6 @@ class MyTastenKlein extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: child,
       height: height,
       width: width,
       decoration: BoxDecoration(
@@ -28,6 +27,7 @@ class MyTastenKlein extends StatelessWidget {
         color: Color(0xFF000000),
         borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
+      child: child,
     );
   }
 }
