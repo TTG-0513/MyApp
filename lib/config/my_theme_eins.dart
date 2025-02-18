@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyThemeEins());
+  runApp(MyThemeEins());
 }
 
 class MyThemeEins extends StatelessWidget {
