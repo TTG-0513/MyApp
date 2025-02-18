@@ -4,7 +4,7 @@ import 'package:ldj_app/features/authentication/models/user.dart';
 class MockUserRepository implements UserRepository {
   @override
   Future<Map<String, UserId>> user() async {
-    return Future.delayed(const Duration(seconds: 2));
+    return user();
   }
 
   @override
