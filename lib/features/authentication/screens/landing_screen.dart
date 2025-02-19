@@ -9,12 +9,11 @@ import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 
 class LandingScreen extends StatefulWidget {
-  LandingScreen({
+  const LandingScreen({
     super.key,
     required this.userRepository,
   });
   final UserRepository userRepository;
-  final _formKey = GlobalKey<FormState>();
 
   @override
   State<LandingScreen> createState() => _LandingScreenState();
@@ -25,7 +24,9 @@ class _LandingScreenState extends State<LandingScreen> {
   final TextEditingController passwortController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool _isObscure = true;
+
   bool loading = false;
+
   String? falseMessage;
 
   @override //immer die Controller Disposen also löschen/bereinigen/säubern
@@ -163,9 +164,6 @@ class _LandingScreenState extends State<LandingScreen> {
                   children: [
                     FilledButton(
                       onPressed: () async {
-                        final name = nameController.text;
-                        final passwort = passwortController.text;
-                        //print('Die Name $name das Passwort $passwort');
                         if (_formKey.currentState!.validate()) {
                           final anmelden = await mockCompleted();
                           if (anmelden) {
@@ -176,18 +174,28 @@ class _LandingScreenState extends State<LandingScreen> {
                                 ),
                               ),
                             );
-                            if (name != passwort) {
-                            } else {
-                              setState(() {
-                                falseMessage =
-                                    "Gebe deine Daten bitte noch mal ein";
-                              });
-                            }
-                          } else {}
-                        }
+                          } else {
+                            setState(() {
+                              falseMessage =
+                                  "Gebe deine Daten bitte noch mal ein";
+                            });
+                          }
+                        } else {}
                       },
                       child: Text("Anmelden"),
                     ),
+                    if (loading)
+                      Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                    if (falseMessage != null)
+                      Text(
+                        falseMessage!,
+                        style: GoogleFonts.manrope(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFFFFFFFF)),
+                      ),
                     TextButton(
                         onPressed: () {
                           Navigator.of(context).pushReplacement(
@@ -237,14 +245,34 @@ class _LandingScreenState extends State<LandingScreen> {
       ]),
     );
   }
-}
 
-Future<bool> mockCompleted() {
-  // später tauschen wir das gegen einen echten server request aus
-  return Future.delayed(
-    Duration(seconds: 2),
-    () => false,
-  ).timeout(
-    Duration(seconds: 5),
-  );
+  Future<bool> mockCompleted() async {
+    setState(() {
+      loading = true;
+      falseMessage = null;
+    });
+
+    // wir simulieren eine wartezeit von X sekunden, in der realität wäre das eine server anfrage
+    final res = await mockRequest().catchError((error) {
+      // e ist unsere exception die wir bekommen, in dem fall: timeoutexception
+      print('exception: $error');
+      return false;
+    });
+
+    setState(() {
+      loading = false;
+    });
+
+    return res;
+  }
+
+  Future<bool> mockRequest() {
+    // später tauschen wir das gegen einen echten server request aus
+    return Future.delayed(
+      Duration(seconds: 2),
+      () => false,
+    ).timeout(
+      Duration(seconds: 5),
+    );
+  }
 }
