@@ -11,5 +11,6 @@ void main() {
   runApp(MaterialApp(
       home: LDJApp(
     user: user,
+    userRepository: MockUserRepository(),
   )));
 }

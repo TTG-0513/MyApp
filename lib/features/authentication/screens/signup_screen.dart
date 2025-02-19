@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
+import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
 
 class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+  const SignupScreen({super.key, required this.userRepository});
+  final UserRepository userRepository;
 
   @override
   State<SignupScreen> createState() => _SignupScreenState();
@@ -78,6 +80,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         height: 50,
                         width: 250,
                         child: TextFormField(
+                          cursorErrorColor: Color(0xFFFFFFFF),
+                          cursorColor: Color(0xFFFFFFFF),
                           controller: nameController,
                           style: GoogleFonts.manrope(
                               color: Color(0xFFFFFFFF), fontSize: 15),
@@ -86,7 +90,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                           validator: (value) {
                             if (value == null || value.length < 5) {
-                              return 'Der Name muss länger als 6 Buchstaben sein ';
+                              return 'Der Name muss länger als 6 zeichen sein ';
                             }
                             return null;
                           },
@@ -99,6 +103,8 @@ class _SignupScreenState extends State<SignupScreen> {
                           height: 50,
                           width: 250,
                           child: TextFormField(
+                            cursorErrorColor: Color(0xFFFFFFFF),
+                            cursorColor: Color(0xFFFFFFFF),
                             controller: emailController,
                             style: GoogleFonts.manrope(
                                 color: Color(0xFFFFFFFF), fontSize: 15),
@@ -106,7 +112,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               labelText: "Email",
                             ),
                             validator: (value) {
-                              final expression = RegExp("TheGradientPilot");
+                              final expression = RegExp("");
                               if (expression.hasMatch(value ?? '')) {
                                 // value entspricht unserem regex pattern -> email ist valide!
                                 return null;
@@ -125,12 +131,14 @@ class _SignupScreenState extends State<SignupScreen> {
                           height: 50,
                           width: 250,
                           child: TextFormField(
+                            cursorErrorColor: Color(0xFFFFFFFF),
+                            cursorColor: Color(0xFFFFFFFF),
                             style: GoogleFonts.manrope(
                                 color: Color(0xFFFFFFFF), fontSize: 15),
                             validator: (value) {
-                              return (value?.length ?? 0) > 12
+                              return (value?.length ?? 0) > 8
                                   ? null
-                                  : 'Das Passwort muss mindestens 12 Zeichen haben ';
+                                  : 'Das Passwort muss mindestens 8 Zeichen haben ';
                             },
                             decoration: InputDecoration(
                               labelText: 'Passwort',
@@ -145,12 +153,14 @@ class _SignupScreenState extends State<SignupScreen> {
                           height: 50,
                           width: 250,
                           child: TextFormField(
+                            cursorErrorColor: Color(0xFFFFFFFF),
+                            cursorColor: Color(0xFFFFFFFF),
                             style: GoogleFonts.manrope(
                                 color: Color(0xFFFFFFFF), fontSize: 15),
                             validator: (value) {
-                              return (value?.length ?? 0) > 12
+                              return (value?.length ?? 0) > 8
                                   ? null
-                                  : 'Das Passwort muss mindestens 12 Zeichen haben ';
+                                  : 'Das Passwort muss mindestens 8 Zeichen haben ';
                             },
                             decoration: InputDecoration(
                               labelText: 'Passwort Wiederholen',
@@ -170,15 +180,14 @@ class _SignupScreenState extends State<SignupScreen> {
                     FilledButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            //Form ist valide
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => GamesScreen(),
+                                builder: (context) => GamesScreen(
+                                  userRepository: widget.userRepository,
+                                ),
                               ),
                             );
-                          } else {
-                            //form ist nicht valide
-                          }
+                          } else {}
                         },
                         child: Text("Regestrieren"))
                   ],

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
+import 'package:ldj_app/features/authentication/data/mock_database.dart';
+import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/authentication/screens/landing_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
 
 class ResetPasswort extends StatelessWidget {
-  const ResetPasswort({super.key});
+  const ResetPasswort({super.key, required this.userRepository});
+  final UserRepository userRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +102,9 @@ class ResetPasswort extends StatelessWidget {
                     FilledButton(
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => LandingScreen()));
+                              builder: (context) => LandingScreen(
+                                    userRepository: userRepository,
+                                  )));
                         },
                         child: Text("Zurücksetzen"))
                   ],

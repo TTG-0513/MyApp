@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_eins.dart';
+import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 import 'package:ldj_app/features/authentication/screens/signup_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/games_guest.dart';
@@ -8,20 +9,28 @@ import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 
 class LandingScreen extends StatefulWidget {
-  const LandingScreen({super.key});
+  LandingScreen({
+    super.key,
+    required this.userRepository,
+  });
+  final UserRepository userRepository;
+  final _formKey = GlobalKey<FormState>();
 
   @override
   State<LandingScreen> createState() => _LandingScreenState();
 }
 
 class _LandingScreenState extends State<LandingScreen> {
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController passwortController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
   bool _isObscure = true;
+  bool loading = false;
+  String? falseMessage;
 
   @override //immer die Controller Disposen also löschen/bereinigen/säubern
   void dispose() {
-    emailController.dispose();
+    nameController.dispose();
     passwortController.dispose();
     super.dispose();
   }
@@ -83,76 +92,109 @@ class _LandingScreenState extends State<LandingScreen> {
               SizedBox(
                 height: 300,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 50,
-                  width: 250,
-                  child: TextFormField(
-                    controller: emailController,
-                    style: GoogleFonts.manrope(
-                        color: Color(0xFFFFFFFF), fontSize: 15),
-                    decoration: InputDecoration(
-                      labelText: "Name",
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  alignment: Alignment.center,
-                  height: 50,
-                  width: 250,
-                  child: TextFormField(
-                    style: GoogleFonts.manrope(
-                        color: Color(0xFFFFFFFF), fontSize: 15),
-                    obscureText: _isObscure,
-                    controller: passwortController,
-                    decoration: InputDecoration(
-                      labelText: 'Passwort',
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _isObscure ? Icons.visibility : Icons.visibility_off,
+              Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 50,
+                          width: 250,
+                          child: TextFormField(
+                            controller: nameController,
+                            style: GoogleFonts.manrope(
+                                color: Color(0xFFFFFFFF), fontSize: 15),
+                            validator: (value) {
+                              final expression = RegExp("");
+                              if (expression.hasMatch(value ?? '')) {
+                                return null;
+                              } else {
+                                return 'Nicht genügen Zeichen';
+                              }
+                            },
+                            decoration: InputDecoration(
+                              labelText: "Name",
+                            ),
+                          ),
                         ),
-                        onPressed: () {
-                          setState(() {
-                            _isObscure = !_isObscure;
-                          });
-                        },
                       ),
-                    ),
-                  ),
-                ),
-              ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 50,
+                          width: 250,
+                          child: TextFormField(
+                            style: GoogleFonts.manrope(
+                                color: Color(0xFFFFFFFF), fontSize: 15),
+                            validator: (value) {
+                              if (value == null || value.length < 5) {
+                                return 'Der Name muss länger als 6 Zeichen sein ';
+                              }
+                              return null;
+                            },
+                            obscureText: _isObscure,
+                            controller: passwortController,
+                            decoration: InputDecoration(
+                              labelText: 'Passwort',
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _isObscure
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    _isObscure = !_isObscure;
+                                  });
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
                     FilledButton(
-                      onPressed: () {
-                        final email = emailController.text;
+                      onPressed: () async {
+                        final name = nameController.text;
                         final passwort = passwortController.text;
-                        //print('Die Email $email das Passwort $passwort');
-                        if (email != passwort) {
-                          emailController.clear();
-                          passwortController.clear();
-                          return;
+                        //print('Die Name $name das Passwort $passwort');
+                        if (_formKey.currentState!.validate()) {
+                          final anmelden = await mockCompleted();
+                          if (anmelden) {
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (context) => GamesScreen(
+                                  userRepository: widget.userRepository,
+                                ),
+                              ),
+                            );
+                            if (name != passwort) {
+                            } else {
+                              setState(() {
+                                falseMessage =
+                                    "Gebe deine Daten bitte noch mal ein";
+                              });
+                            }
+                          } else {}
                         }
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => GamesScreen(),
-                          ),
-                        );
                       },
                       child: Text("Anmelden"),
                     ),
                     TextButton(
                         onPressed: () {
-                          Navigator.of(context).push(
+                          Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
-                              builder: (context) => ResetPasswort(),
+                              builder: (context) => ResetPasswort(
+                                userRepository: widget.userRepository,
+                              ),
                             ),
                           );
                         },
@@ -177,7 +219,8 @@ class _LandingScreenState extends State<LandingScreen> {
                           onPressed: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => SignupScreen(),
+                                builder: (context) => SignupScreen(
+                                    userRepository: widget.userRepository),
                               ),
                             );
                           },
@@ -194,4 +237,14 @@ class _LandingScreenState extends State<LandingScreen> {
       ]),
     );
   }
+}
+
+Future<bool> mockCompleted() {
+  // später tauschen wir das gegen einen echten server request aus
+  return Future.delayed(
+    Duration(seconds: 2),
+    () => false,
+  ).timeout(
+    Duration(seconds: 5),
+  );
 }

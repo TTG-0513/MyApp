@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
+import 'package:ldj_app/features/authentication/data/mock_database.dart';
+import 'package:ldj_app/features/authentication/data/user.mock.dart';
+import 'package:ldj_app/features/authentication/data/user_repository.dart';
+import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 
 import 'package:ldj_app/features/game_selection/widgets/history_details.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
@@ -55,13 +59,23 @@ class UserHistory extends StatelessWidget {
                       color: Color(0xFF000000),
                       borderRadius: BorderRadius.all(Radius.circular(8)),
                     ),
-                    height: 30,
-                    width: 190,
-                    child: Text(
-                      "Account löschen",
-                      style: GoogleFonts.manrope(
-                          fontSize: 20, color: Color(0xFFFFFFFF)),
-                    ),
+                    height: 35,
+                    width: 150,
+                    child: TextButton(
+                        child: Center(
+                          child: Text(
+                            "Account löschen",
+                            style: GoogleFonts.manrope(
+                                fontSize: 15, color: Color(0xFFFFFFFF)),
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ResetPasswort(
+                              userRepository: MockUserRepository(),
+                            ),
+                          ));
+                        }),
                   ),
                 ],
               ),
