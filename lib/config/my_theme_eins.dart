@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyThemeEins());
-}
-
 class MyThemeEins extends StatelessWidget {
   const MyThemeEins({super.key, this.child, this.decoration, this.alignment});
 

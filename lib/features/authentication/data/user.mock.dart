@@ -1,6 +1,6 @@
 import '../models/user.dart';
 
-Map<String, UserId> user = {
+Map<String, UserId> mockUser = {
   "Dart Legend": UserId(
       pseudonym: "Dart Legend",
       passwort: "12345654321",
