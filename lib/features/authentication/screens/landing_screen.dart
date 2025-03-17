@@ -256,7 +256,7 @@ class _LandingScreenState extends State<LandingScreen> {
     final res = await mockRequest().catchError((error) {
       // e ist unsere exception die wir bekommen, in dem fall: timeoutexception
       print('exception: $error');
-      return false;
+      return true;
     });
 
     setState(() {
@@ -270,7 +270,7 @@ class _LandingScreenState extends State<LandingScreen> {
     // später tauschen wir das gegen einen echten server request aus
     return Future.delayed(
       Duration(seconds: 2),
-      () => false,
+      () => true,
     ).timeout(
       Duration(seconds: 5),
     );

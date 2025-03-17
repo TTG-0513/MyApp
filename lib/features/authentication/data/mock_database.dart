@@ -9,7 +9,7 @@ class MockUserRepository implements UserRepository {
   }
 
   @override
-  void getUser(Future<Map<String, UserId>> user) {}
+  void getUser(String userName) {}
 
   @override
   void createUser(Future<Map<String, UserId>> user) {}

@@ -59,7 +59,7 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ],
                       border: Border.all(
-                        width: 3,
+                        width: 1,
                         color: Color(0xFFFFFFFF),
                       ),
                       gradient: LinearGradient(
@@ -96,7 +96,7 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ],
                       border: Border.all(
-                        width: 3,
+                        width: 1,
                         color: Color(0xFFFFFFFF),
                       ),
                       gradient: LinearGradient(
@@ -133,7 +133,7 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ],
                       border: Border.all(
-                        width: 3,
+                        width: 1,
                         color: Color(0xFFFFFFFF),
                       ),
                       gradient: LinearGradient(
@@ -164,7 +164,7 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ],
                       border: Border.all(
-                        width: 3,
+                        width: 1,
                         color: Color(0xFFFFFFFF),
                       ),
                       gradient: LinearGradient(
@@ -182,6 +182,7 @@ class SettingsScreen extends StatelessWidget {
                     height: 100,
                     width: 380,
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           "Light/Dark",
@@ -190,6 +191,12 @@ class SettingsScreen extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                               color: Color(0xFFFFFFFF)),
                         ),
+                        FilledButton(
+                            onPressed: () {},
+                            child: Text(
+                                style: TextStyle(
+                                    fontSize: 15, color: Color(0xFFFFFFFF)),
+                                "Toggel"))
                       ],
                     ),
                   ),
@@ -207,7 +214,7 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ],
                       border: Border.all(
-                        width: 3,
+                        width: 1,
                         color: Color(0xFFFFFFFF),
                       ),
                       gradient: LinearGradient(

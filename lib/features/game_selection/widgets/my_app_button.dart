@@ -29,7 +29,7 @@ class MyAppButton extends StatelessWidget {
           ),
         ],
         border: Border.all(
-          width: 3,
+          width: 1,
           color: Color(0xFFFFFFFF),
         ),
         gradient: LinearGradient(
