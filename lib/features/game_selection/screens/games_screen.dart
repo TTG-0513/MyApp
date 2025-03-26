@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
-import 'package:ldj_app/features/game_selection/screens/spezial_games.dart';
-import 'package:ldj_app/features/game_selection/screens/user_history.dart';
+import 'package:ldj_app/features/game_selection/screens/special_games_screen.dart';
+import 'package:ldj_app/features/game_selection/screens/user_history_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_container.dart';
 import 'package:ldj_app/shared/screens/tips_tricks.dart';
@@ -87,7 +87,7 @@ class GamesScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => SpezialGames(),
+                            builder: (context) => SpecialGamesScreen(),
                           ),
                         );
                       },
@@ -108,7 +108,7 @@ class GamesScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => UserHistory(),
+                            builder: (context) => UserHistoryScreen(),
                           ),
                         );
                       },

@@ -1,5 +1,7 @@
 # This is a generated file; do not edit or check into version control.
 device_info_plus=/Users/torsteng./.pub-cache/hosted/pub.dev/device_info_plus-11.2.2/
+firebase_core=/Users/torsteng./.pub-cache/hosted/pub.dev/firebase_core-3.12.1/
+firebase_core_web=/Users/torsteng./.pub-cache/hosted/pub.dev/firebase_core_web-2.21.1/
 flutter_native_splash=/Users/torsteng./.pub-cache/hosted/pub.dev/flutter_native_splash-2.4.4/
 path_provider=/Users/torsteng./.pub-cache/hosted/pub.dev/path_provider-2.1.5/
 path_provider_android=/Users/torsteng./.pub-cache/hosted/pub.dev/path_provider_android-2.2.15/

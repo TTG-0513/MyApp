@@ -4,9 +4,10 @@ import 'package:ldj_app/config/my_theme_eins.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 import 'package:ldj_app/features/authentication/screens/signup_screen.dart';
-import 'package:ldj_app/features/game_selection/screens/games_guest.dart';
+import 'package:ldj_app/features/game_selection/screens/games_guest_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_container2.dart';
 
 class LandingScreen extends StatefulWidget {
   const LandingScreen({
@@ -162,27 +163,36 @@ class _LandingScreenState extends State<LandingScreen> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    FilledButton(
-                      onPressed: () async {
-                        if (_formKey.currentState!.validate()) {
-                          final anmelden = await mockCompleted();
-                          if (anmelden) {
-                            Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                builder: (context) => GamesScreen(
-                                  userRepository: widget.userRepository,
+                    MyContainer2(
+                      child: TextButton(
+                        onPressed: () async {
+                          if (_formKey.currentState!.validate()) {
+                            final anmelden = await mockCompleted();
+                            if (anmelden) {
+                              Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) => GamesScreen(
+                                    userRepository: widget.userRepository,
+                                  ),
                                 ),
-                              ),
-                            );
-                          } else {
-                            setState(() {
-                              falseMessage =
-                                  "Gebe deine Daten bitte noch mal ein";
-                            });
-                          }
-                        } else {}
-                      },
-                      child: Text("Anmelden"),
+                              );
+                            } else {
+                              setState(() {
+                                falseMessage =
+                                    "Gebe deine Daten bitte noch mal ein";
+                              });
+                            }
+                          } else {}
+                        },
+                        child: Text(
+                          "Anmelden",
+                          style: GoogleFonts.manrope(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(242, 255, 255, 255),
+                          ),
+                        ),
+                      ),
                     ),
                     if (loading)
                       Center(
@@ -197,33 +207,51 @@ class _LandingScreenState extends State<LandingScreen> {
                             color: Color(0xFFFFFFFF)),
                       ),
                     TextButton(
-                        onPressed: () {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                              builder: (context) => ResetPasswort(
-                                userRepository: widget.userRepository,
-                              ),
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(
+                            builder: (context) => ResetPasswort(
+                              userRepository: widget.userRepository,
                             ),
-                          );
-                        },
-                        child: Text("Passwort Vergessen")),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "Passwort Vergessen",
+                        style: GoogleFonts.manrope(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(242, 255, 255, 255),
+                        ),
+                      ),
+                    ),
                     SizedBox(
                       height: 150,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        FilledButton(
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => GamesGuestScreen(),
+                        MyContainer2(
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => GamesGuestScreen(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              "Gast Anmeldung",
+                              style: GoogleFonts.manrope(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(242, 255, 255, 255),
                               ),
-                            );
-                          },
-                          child: Text("Gast Anmeldung"),
+                            ),
+                          ),
                         ),
-                        FilledButton(
+                        MyContainer2(
+                            child: TextButton(
                           onPressed: () {
                             Navigator.of(context).push(
                               MaterialPageRoute(
@@ -232,8 +260,15 @@ class _LandingScreenState extends State<LandingScreen> {
                               ),
                             );
                           },
-                          child: Text("Regestrieren"),
-                        )
+                          child: Text(
+                            "Regestrierung",
+                            style: GoogleFonts.manrope(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(242, 255, 255, 255),
+                            ),
+                          ),
+                        ))
                       ],
                     )
                   ],
