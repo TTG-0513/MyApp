@@ -1,1 +1,0 @@
- /Users/torsteng./Desktop/Kapitel\ 3\ \ Code/Das\ Projekt/LDJ\ -\ Learning\ Dart\ für\ Jedermann/My_App_LDJ/.dart_tool/flutter_build/bd1439d6f9cb8b357e10c1be3cc06ff8/native_assets.yaml: 

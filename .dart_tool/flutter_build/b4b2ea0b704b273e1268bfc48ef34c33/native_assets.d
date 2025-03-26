@@ -1,1 +1,0 @@
- /Users/torsteng./Desktop/App\ Akadem/Kapitel\ 4/MyApp/.dart_tool/flutter_build/b4b2ea0b704b273e1268bfc48ef34c33/native_assets.yaml: 
