@@ -32,3 +32,8 @@ Runner/GeneratedPluginRegistrant.*
 !default.mode2v3
 !default.pbxuser
 !default.perspectivev3
+
+/lib/firebase_options.dart
+/android/gradle/wrapper/google-services.json
+/ios/Runner/GoogleService-Info.plist
+/firebase.json

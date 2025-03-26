@@ -4,15 +4,18 @@ import 'package:ldj_app/config/my_theme_eins.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 import 'package:ldj_app/features/authentication/screens/signup_screen.dart';
+import 'package:ldj_app/features/authentication/widgets/login_repository.dart';
 import 'package:ldj_app/features/game_selection/screens/games_guest_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_container2.dart';
 
 class LandingScreen extends StatefulWidget {
+  final LoginRepository loginRepository;
   const LandingScreen({
     super.key,
     required this.userRepository,
+    required this.loginRepository,
   });
   final UserRepository userRepository;
 

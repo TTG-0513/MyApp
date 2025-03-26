@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "854976710498",
+    "project_id": "ldj-dartapp",
+    "storage_bucket": "ldj-dartapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854976710498:android:a3935a22ecf5a26faace3b",
+        "android_client_info": {
+          "package_name": "com.example.ldj_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxsPRdLrpSZFbRo5vg6LtuEMK8703w208"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
