@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
+import 'package:ldj_app/features/authentication/data/login_repository.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/special_games_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/user_history_screen.dart';
@@ -9,8 +10,10 @@ import 'package:ldj_app/features/game_selection/widgets/my_container.dart';
 import 'package:ldj_app/shared/screens/tips_tricks.dart';
 
 class GamesScreen extends StatelessWidget {
-  const GamesScreen({super.key, required this.userRepository});
-  final UserRepository userRepository;
+  const GamesScreen(
+      {super.key, required this.loginRepository, required this.authRepository});
+  final LoginRepository? loginRepository;
+  final AuthRepository authRepository;
 
   @override
   Widget build(BuildContext context) {

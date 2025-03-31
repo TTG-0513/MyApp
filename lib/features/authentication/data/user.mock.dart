@@ -3,12 +3,12 @@ import '../models/user.dart';
 Map<String, UserId> mockUser = {
   "Dart Legend": UserId(
       pseudonym: "Dart Legend",
-      passwort: "12345654321",
-      email: "test@email.de"),
+      passwort: "123456",
+      email: "dartlegend@email.de"),
   "TheTiger": UserId(
       pseudonym: "TheTiger",
-      passwort: "45678987654",
-      email: "testing@email.de"),
+      passwort: "12345654321",
+      email: "psst.geheim@email.de"),
   "Der Anfänger": UserId(
       pseudonym: "Der Anfänger",
       passwort: "0101010101",

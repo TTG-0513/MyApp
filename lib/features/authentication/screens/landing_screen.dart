@@ -1,30 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_eins.dart';
+import 'package:ldj_app/features/authentication/data/user_data_repo.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
+import 'package:ldj_app/features/authentication/models/user.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 import 'package:ldj_app/features/authentication/screens/signup_screen.dart';
-import 'package:ldj_app/features/authentication/widgets/login_repository.dart';
+import 'package:ldj_app/features/authentication/data/login_repository.dart';
 import 'package:ldj_app/features/game_selection/screens/games_guest_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_container2.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:ldj_app/main.dart';
 
 class LandingScreen extends StatefulWidget {
-  final LoginRepository loginRepository;
+  final UserData users;
+  final AuthRepository authRepository;
+  final LoginRepository? loginRepository;
   const LandingScreen({
     super.key,
-    required this.userRepository,
-    required this.loginRepository,
+    required this.authRepository,
+    required this.users,
+    this.loginRepository,
   });
-  final UserRepository userRepository;
 
   @override
   State<LandingScreen> createState() => _LandingScreenState();
 }
 
 class _LandingScreenState extends State<LandingScreen> {
-  final TextEditingController nameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController passwortController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool _isObscure = true;
@@ -32,10 +38,42 @@ class _LandingScreenState extends State<LandingScreen> {
   bool loading = false;
 
   String? falseMessage;
+  void login() async {
+    if (emailController.text.isEmpty || passwortController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Bitte E-Mail oder Password ausfüllen")));
+      return;
+    }
+
+    // Nutzer einloggen
+    falseMessage = await widget.authRepository!
+        .signInWithEmailPassword(emailController.text, passwortController.text);
+
+    setState(() {});
+  }
+
+  void register() async {
+    if (emailController.text.isEmpty || passwortController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Bitte E-Mail oder Password ausfüllen")));
+      return;
+    }
+
+    // Nutzer registrieren
+    falseMessage = await widget.authRepository!.registerWithEmailPassword(
+        emailController.text, passwortController.text);
+    setState(() {});
+  }
+
+  void googleLogin() async {
+    falseMessage = await widget.authRepository!.signInWithGoogle();
+
+    setState(() {});
+  }
 
   @override //immer die Controller Disposen also löschen/bereinigen/säubern
   void dispose() {
-    nameController.dispose();
+    emailController.dispose();
     passwortController.dispose();
     super.dispose();
   }
@@ -108,19 +146,11 @@ class _LandingScreenState extends State<LandingScreen> {
                           height: 50,
                           width: 250,
                           child: TextFormField(
-                            controller: nameController,
+                            controller: emailController,
                             style: GoogleFonts.manrope(
                                 color: Color(0xFFFFFFFF), fontSize: 15),
-                            validator: (value) {
-                              final expression = RegExp("");
-                              if (expression.hasMatch(value ?? '')) {
-                                return null;
-                              } else {
-                                return 'Nicht genügen Zeichen';
-                              }
-                            },
                             decoration: InputDecoration(
-                              labelText: "Name",
+                              labelText: "Email",
                             ),
                           ),
                         ),
@@ -134,12 +164,6 @@ class _LandingScreenState extends State<LandingScreen> {
                           child: TextFormField(
                             style: GoogleFonts.manrope(
                                 color: Color(0xFFFFFFFF), fontSize: 15),
-                            validator: (value) {
-                              if (value == null || value.length < 5) {
-                                return 'Der Name muss länger als 6 Zeichen sein ';
-                              }
-                              return null;
-                            },
                             obscureText: _isObscure,
                             controller: passwortController,
                             decoration: InputDecoration(
@@ -174,8 +198,13 @@ class _LandingScreenState extends State<LandingScreen> {
                             if (anmelden) {
                               Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                  builder: (context) => GamesScreen(
-                                    userRepository: widget.userRepository,
+                                  builder:
+                                      (context) => /*widget.loginRepository
+                                      .login(emailController.text,
+                                          passwordController.text)*/
+                                          GamesScreen(
+                                    authRepository: widget.authRepository,
+                                    loginRepository: null,
                                   ),
                                 ),
                               );
@@ -213,9 +242,7 @@ class _LandingScreenState extends State<LandingScreen> {
                       onPressed: () {
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
-                            builder: (context) => ResetPasswort(
-                              userRepository: widget.userRepository,
-                            ),
+                            builder: (context) => ResetPasswort(),
                           ),
                         );
                       },
@@ -259,7 +286,8 @@ class _LandingScreenState extends State<LandingScreen> {
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => SignupScreen(
-                                    userRepository: widget.userRepository),
+                                  authRepository: widget.authRepository,
+                                ),
                               ),
                             );
                           },

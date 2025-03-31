@@ -4,11 +4,13 @@ import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/authentication/data/mock_database.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/authentication/screens/landing_screen.dart';
+import 'package:ldj_app/features/authentication/data/login_repository.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
 
 class ResetPasswort extends StatelessWidget {
-  const ResetPasswort({super.key, required this.userRepository});
-  final UserRepository userRepository;
+  const ResetPasswort({super.key, this.authRepository});
+
+  final AuthRepository? authRepository;
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +105,8 @@ class ResetPasswort extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => LandingScreen(
-                                    userRepository: userRepository,
+                                    authRepository: authRepository!,
+                                    users: null!,
                                   )));
                         },
                         child: Text("Zurücksetzen"))

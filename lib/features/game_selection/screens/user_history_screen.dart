@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
@@ -5,9 +6,11 @@ import 'package:ldj_app/features/authentication/data/mock_database.dart';
 import 'package:ldj_app/features/authentication/data/user.mock.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
+import 'package:ldj_app/features/authentication/data/login_repository.dart';
 
 import 'package:ldj_app/features/game_selection/widgets/history_details.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
+import 'package:ldj_app/main.dart';
 
 class UserHistoryScreen extends StatelessWidget {
   const UserHistoryScreen({super.key});
@@ -71,9 +74,7 @@ class UserHistoryScreen extends StatelessWidget {
                         ),
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ResetPasswort(
-                              userRepository: MockUserRepository(),
-                            ),
+                            builder: (context) => ResetPasswort(),
                           ));
                         }),
                   ),
