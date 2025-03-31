@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
-import 'package:ldj_app/features/authentication/data/user_repository.dart';
-import 'package:ldj_app/features/authentication/data/login_repository.dart';
+import 'package:ldj_app/features/authentication/data/auth_repo.dart';
+
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
-import 'package:ldj_app/main.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({

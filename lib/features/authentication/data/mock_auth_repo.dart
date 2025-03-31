@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:collection/collection.dart';
+import 'package:ldj_app/features/authentication/data/auth_repo.dart';
 import 'package:ldj_app/features/authentication/data/user_data_repo.dart';
-import 'package:ldj_app/features/authentication/data/user_repository.dart';
 
 class MockAuthRepository implements AuthRepository {
   // Simulierte User-Liste in der Datenbank

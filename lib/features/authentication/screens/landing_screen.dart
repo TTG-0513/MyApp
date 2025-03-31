@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_eins.dart';
+import 'package:ldj_app/features/authentication/data/auth_repo.dart';
 import 'package:ldj_app/features/authentication/data/user_data_repo.dart';
-import 'package:ldj_app/features/authentication/data/user_repository.dart';
-import 'package:ldj_app/features/authentication/models/user.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 import 'package:ldj_app/features/authentication/screens/signup_screen.dart';
 import 'package:ldj_app/features/authentication/data/login_repository.dart';
@@ -11,8 +10,6 @@ import 'package:ldj_app/features/game_selection/screens/games_guest_screen.dart'
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_container2.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:ldj_app/main.dart';
 
 class LandingScreen extends StatefulWidget {
   final UserData users;
