@@ -2,6 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:ldj_app/features/authentication/data/auth_repo.dart';
+<<<<<<< Updated upstream
+=======
+import 'package:ldj_app/features/authentication/data/user_repository.dart';
+>>>>>>> Stashed changes
 
 class FirebaseAuthRepository implements AuthRepository {
   final FirebaseAuth _auth;
