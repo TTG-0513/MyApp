@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:ldj_app/app.dart';
 import 'package:ldj_app/features/authentication/data/auth_repo.dart';
-import 'package:ldj_app/features/authentication/data/firebase_auth_repo.dart';
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firebase_auth_repo.dart';
 import 'package:ldj_app/features/authentication/data/mock_database.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/authentication/data/login_repository.dart';

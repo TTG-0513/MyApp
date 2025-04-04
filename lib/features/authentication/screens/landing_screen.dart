@@ -12,13 +12,11 @@ import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_container2.dart';
 
 class LandingScreen extends StatefulWidget {
-  final UserData users;
   final AuthRepository authRepository;
   final LoginRepository? loginRepository;
   const LandingScreen({
     super.key,
     required this.authRepository,
-    required this.users,
     this.loginRepository,
   });
 

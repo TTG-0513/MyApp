@@ -138,6 +138,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           height: 50,
                           width: 250,
                           child: TextFormField(
+                            controller: passwortController,
                             cursorErrorColor: Color(0xFFFFFFFF),
                             cursorColor: Color(0xFFFFFFFF),
                             style: GoogleFonts.manrope(
@@ -185,8 +186,12 @@ class _SignupScreenState extends State<SignupScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     FilledButton(
-                        onPressed: () {
+                        onPressed: () async {
                           if (_formKey.currentState!.validate()) {
+                            await widget.authRepository
+                                .registerWithEmailPassword(emailController.text,
+                                    passwortController.text);
+
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => GamesScreen(

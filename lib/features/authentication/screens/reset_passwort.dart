@@ -109,7 +109,6 @@ class ResetPasswort extends StatelessWidget {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => LandingScreen(
                                     authRepository: authRepository!,
-                                    users: null!,
                                   )));
                         },
                         child: Text("Zurücksetzen"))

@@ -26,7 +26,6 @@ class LDJApp extends StatelessWidget {
         home: LandingScreen(
       authRepository: authRepository,
       loginRepository: loginRepository,
-      users: null!,
     ));
   }
 }
