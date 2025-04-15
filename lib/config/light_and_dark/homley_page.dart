@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ldj_app/config/light_and_dark/components/box.dart';
 import 'package:ldj_app/config/light_and_dark/components/theme_provider.dart';
 import 'package:ldj_app/config/light_and_dark/l_d_button.dart';
-import 'package:ldj_app/config/light_and_dark/light_dark.dart';
 import 'package:provider/provider.dart';
 
 class HomleyPage extends StatelessWidget {

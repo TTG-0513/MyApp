@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
 
-class FirestoreUserRepo implements FirestorUserAbstract {
-  FirestoreUserRepo(this._db);
-
+class FirestoreUserRepo implements FirestoreUserAbstract {
   final FirebaseFirestore _db;
 
+  FirestoreUserRepo(this._db);
+
   @override
-  Future<bool> setUser(String name, email) {
+  Future<bool> createUser(String name, email) {
     _db.collection("Users").doc().set({"name": name, "email": email});
     return Future.value(true);
   }
@@ -30,23 +30,8 @@ class FirestoreUserRepo implements FirestorUserAbstract {
   }
 
   @override
-  Future<String> creatUser(String name, email) {
-    _db.collection("Users").doc().creatUser(
-      {},
-      String: name,
-      Dynamic: email,
-    );
-    throw UnimplementedError();
-  }
-
-  @override
   Future<String> deletUser(String name, email) {
     _db.collection("Users").doc().update({"name": name, "email": email});
     throw UnimplementedError();
   }
-}
-
-extension on DocumentReference<Map<String, dynamic>> {
-  void creatUser(Map<String, dynamic> map,
-      {required String, required Dynamic}) {}
 }

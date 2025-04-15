@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/authentication/data/auth_repo.dart';
-import 'package:ldj_app/features/authentication/data/user_repository.dart';
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_user_repo.dart';
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
 import 'package:ldj_app/features/authentication/data/login_repository.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
 import 'package:ldj_app/features/game_selection/screens/special_games_screen.dart';
@@ -11,10 +12,14 @@ import 'package:ldj_app/features/game_selection/widgets/my_container.dart';
 import 'package:ldj_app/shared/screens/tips_tricks.dart';
 
 class GamesScreen extends StatelessWidget {
-  const GamesScreen(
-      {super.key, required this.loginRepository, required this.authRepository});
+  GamesScreen(
+      {super.key,
+      required this.loginRepository,
+      required this.authRepository,
+      required this.firestoreUserAbstract});
   final LoginRepository? loginRepository;
   final AuthRepository authRepository;
+  final FirestoreUserAbstract firestoreUserAbstract;
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +117,9 @@ class GamesScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => UserHistoryScreen(),
+                            builder: (context) => UserHistoryScreen(
+                              firestoreUserAbstract: firestoreUserAbstract,
+                            ),
                           ),
                         );
                       },

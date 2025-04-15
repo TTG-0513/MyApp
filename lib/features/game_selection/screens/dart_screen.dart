@@ -92,9 +92,9 @@ class _CounterState extends State<Counter> {
                 fontWeight: FontWeight.bold,
                 color: Colors.black)),
         style: ButtonStyle(
-          padding: MaterialStateProperty.all(const EdgeInsets.all(24.0)),
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-          textStyle: MaterialStateProperty.all(
+          padding: WidgetStateProperty.all(const EdgeInsets.all(24.0)),
+          backgroundColor: WidgetStateProperty.all<Color>(Colors.white),
+          textStyle: WidgetStateProperty.all(
             const TextStyle(
               //backgroundColor: Colors.yellow,
               color: Colors.black,

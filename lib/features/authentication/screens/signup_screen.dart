@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/authentication/data/auth_repo.dart';
-
-import 'package:ldj_app/features/authentication/data/user_repository.dart';
-import 'package:ldj_app/features/authentication/data/login_repository.dart';
-
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_user_repo.dart';
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
 
 class SignupScreen extends StatefulWidget {
-  const SignupScreen({
+  SignupScreen({
     super.key,
     required this.authRepository,
+    required this.firestoreUserAbstract,
   });
   final AuthRepository authRepository;
+  final FirestoreUserAbstract firestoreUserAbstract;
 
   @override
   State<SignupScreen> createState() => _SignupScreenState();
@@ -191,12 +191,15 @@ class _SignupScreenState extends State<SignupScreen> {
                             await widget.authRepository
                                 .registerWithEmailPassword(emailController.text,
                                     passwortController.text);
-
+                            await widget.firestoreUserAbstract.createUser(
+                                nameController.text, emailController.text);
                             Navigator.of(context).push(
                               MaterialPageRoute(
                                 builder: (context) => GamesScreen(
                                   authRepository: widget.authRepository,
                                   loginRepository: null,
+                                  firestoreUserAbstract:
+                                      widget.firestoreUserAbstract,
                                 ),
                               ),
                             );

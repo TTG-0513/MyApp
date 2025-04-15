@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/authentication/data/auth_repo.dart';
-
-import 'package:ldj_app/features/authentication/data/mock_database.dart';
-import 'package:ldj_app/features/authentication/data/user_repository.dart';
-
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_user_repo.dart';
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
 import 'package:ldj_app/features/authentication/screens/landing_screen.dart';
-
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
 
 class ResetPasswort extends StatelessWidget {
-  const ResetPasswort({super.key, this.authRepository});
+  const ResetPasswort(
+      {super.key, this.authRepository, required this.firestorUserAbstract});
 
   final AuthRepository? authRepository;
+  final FirestoreUserAbstract firestorUserAbstract;
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +108,7 @@ class ResetPasswort extends StatelessWidget {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => LandingScreen(
                                     authRepository: authRepository!,
+                                    firestoreUserAbstract: firestorUserAbstract,
                                   )));
                         },
                         child: Text("Zurücksetzen"))

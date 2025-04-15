@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_tasten_klein.dart';
 
 Widget dartTasten(var buttonText) {

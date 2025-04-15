@@ -1,19 +1,20 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
-import 'package:ldj_app/features/authentication/data/mock_database.dart';
-import 'package:ldj_app/features/authentication/data/user.mock.dart';
-import 'package:ldj_app/features/authentication/data/user_repository.dart';
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_user_repo.dart';
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
+import 'package:ldj_app/features/authentication/screens/landing_screen.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
-import 'package:ldj_app/features/authentication/data/login_repository.dart';
-
 import 'package:ldj_app/features/game_selection/widgets/history_details.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
-import 'package:ldj_app/main.dart';
 
 class UserHistoryScreen extends StatelessWidget {
-  const UserHistoryScreen({super.key});
+  UserHistoryScreen({super.key, required this.firestoreUserAbstract});
+  final FirestoreUserAbstract firestoreUserAbstract;
+  final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -72,10 +73,17 @@ class UserHistoryScreen extends StatelessWidget {
                                 fontSize: 15, color: Color(0xFFFFFFFF)),
                           ),
                         ),
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ResetPasswort(),
-                          ));
+                        onPressed: () async {
+                          if (_formKey.currentState!.validate()) {
+                            await firestoreUserAbstract.deletUser(
+                                nameController.text, emailController.text);
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => LandingScreen(
+                                firestoreUserAbstract: firestoreUserAbstract,
+                                authRepository: null!,
+                              ),
+                            ));
+                          }
                         }),
                   ),
                 ],

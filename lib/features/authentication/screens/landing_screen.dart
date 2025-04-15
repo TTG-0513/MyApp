@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_eins.dart';
 import 'package:ldj_app/features/authentication/data/auth_repo.dart';
-import 'package:ldj_app/features/authentication/data/user_data_repo.dart';
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_user_repo.dart';
+import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 import 'package:ldj_app/features/authentication/screens/signup_screen.dart';
 import 'package:ldj_app/features/authentication/data/login_repository.dart';
@@ -14,10 +15,12 @@ import 'package:ldj_app/features/game_selection/widgets/my_container2.dart';
 class LandingScreen extends StatefulWidget {
   final AuthRepository authRepository;
   final LoginRepository? loginRepository;
-  const LandingScreen({
+  final FirestoreUserAbstract firestoreUserAbstract;
+  LandingScreen({
     super.key,
     required this.authRepository,
     this.loginRepository,
+    required this.firestoreUserAbstract,
   });
 
   @override
@@ -32,18 +35,20 @@ class _LandingScreenState extends State<LandingScreen> {
 
   bool loading = false;
 
-  String? falseMessage;
+  String falseMessage = "";
+
   void login() async {
     if (emailController.text.isEmpty || passwortController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Bitte E-Mail oder Password ausfüllen")));
       return;
     }
-
     // Nutzer einloggen
-    falseMessage = await widget.authRepository!
+    await widget.authRepository
         .signInWithEmailPassword(emailController.text, passwortController.text);
 
+    await widget.firestoreUserAbstract
+        .getUser(emailController.text, passwortController.text);
     setState(() {});
   }
 
@@ -53,16 +58,20 @@ class _LandingScreenState extends State<LandingScreen> {
           SnackBar(content: Text("Bitte E-Mail oder Password ausfüllen")));
       return;
     }
-
     // Nutzer registrieren
-    falseMessage = await widget.authRepository!.registerWithEmailPassword(
+    await widget.authRepository.registerWithEmailPassword(
         emailController.text, passwortController.text);
+    bool createUsetSucess = await widget.firestoreUserAbstract
+        .createUser(emailController.text, passwortController.text);
+    if (createUsetSucess) {
+    } else {
+      falseMessage = "";
+    }
     setState(() {});
   }
 
   void googleLogin() async {
-    falseMessage = await widget.authRepository!.signInWithGoogle();
-
+    await widget.authRepository.signInWithGoogle();
     setState(() {});
   }
 
@@ -193,13 +202,11 @@ class _LandingScreenState extends State<LandingScreen> {
                             if (anmelden) {
                               Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                  builder:
-                                      (context) => /*widget.loginRepository
-                                      .login(emailController.text,
-                                          passwordController.text)*/
-                                          GamesScreen(
+                                  builder: (context) => GamesScreen(
                                     authRepository: widget.authRepository,
                                     loginRepository: null,
+                                    firestoreUserAbstract:
+                                        widget.firestoreUserAbstract,
                                   ),
                                 ),
                               );
@@ -237,7 +244,10 @@ class _LandingScreenState extends State<LandingScreen> {
                       onPressed: () {
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
-                            builder: (context) => ResetPasswort(),
+                            builder: (context) => ResetPasswort(
+                              firestorUserAbstract:
+                                  widget.firestoreUserAbstract,
+                            ),
                           ),
                         );
                       },
@@ -282,6 +292,8 @@ class _LandingScreenState extends State<LandingScreen> {
                               MaterialPageRoute(
                                 builder: (context) => SignupScreen(
                                   authRepository: widget.authRepository,
+                                  firestoreUserAbstract:
+                                      widget.firestoreUserAbstract,
                                 ),
                               ),
                             );
@@ -310,7 +322,7 @@ class _LandingScreenState extends State<LandingScreen> {
   Future<bool> mockCompleted() async {
     setState(() {
       loading = true;
-      falseMessage = null;
+      falseMessage = "";
     });
 
     // wir simulieren eine wartezeit von X sekunden, in der realität wäre das eine server anfrage
