@@ -30,6 +30,7 @@ class LandingScreen extends StatefulWidget {
 class _LandingScreenState extends State<LandingScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwortController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
   bool _isObscure = true;
 
@@ -46,9 +47,8 @@ class _LandingScreenState extends State<LandingScreen> {
     // Nutzer einloggen
     await widget.authRepository
         .signInWithEmailPassword(emailController.text, passwortController.text);
-
     await widget.firestoreUserAbstract
-        .getUser(emailController.text, passwortController.text);
+        .getUser(emailController.text, nameController.text);
     setState(() {});
   }
 

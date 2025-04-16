@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
+import 'package:ldj_app/features/authentication/data/auth_repo.dart';
 import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_user_repo.dart';
 import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
 import 'package:ldj_app/features/authentication/screens/landing_screen.dart';
@@ -8,11 +9,21 @@ import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 import 'package:ldj_app/features/game_selection/widgets/history_details.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
 
-class UserHistoryScreen extends StatelessWidget {
-  UserHistoryScreen({super.key, required this.firestoreUserAbstract});
+class UserHistoryScreen extends StatefulWidget {
   final FirestoreUserAbstract firestoreUserAbstract;
-  final _formKey = GlobalKey<FormState>();
+  final AuthRepository authRepository;
+  UserHistoryScreen({
+    super.key,
+    required this.firestoreUserAbstract,
+    required this.authRepository,
+  });
 
+  @override
+  State<UserHistoryScreen> createState() => _UserHistoryScreenState();
+}
+
+class _UserHistoryScreenState extends State<UserHistoryScreen> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
 
@@ -40,10 +51,9 @@ class UserHistoryScreen extends StatelessWidget {
                     width: 200,
                     child: Center(
                         child: SizedBox(
-                            height: 200,
-                            width: 200,
-                            child:
-                                Image.asset("assets/images/AvatarImage.png"))),
+                      height: 200,
+                      width: 200,
+                    )),
                   ),
                   Container(
                     alignment: Alignment.center,
@@ -75,12 +85,13 @@ class UserHistoryScreen extends StatelessWidget {
                         ),
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
-                            await firestoreUserAbstract.deletUser(
+                            await widget.firestoreUserAbstract.deletUser(
                                 nameController.text, emailController.text);
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => LandingScreen(
-                                firestoreUserAbstract: firestoreUserAbstract,
-                                authRepository: null!,
+                                firestoreUserAbstract:
+                                    widget.firestoreUserAbstract,
+                                authRepository: widget.authRepository,
                               ),
                             ));
                           }

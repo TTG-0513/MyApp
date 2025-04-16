@@ -119,6 +119,7 @@ class GamesScreen extends StatelessWidget {
                           MaterialPageRoute(
                             builder: (context) => UserHistoryScreen(
                               firestoreUserAbstract: firestoreUserAbstract,
+                              authRepository: authRepository,
                             ),
                           ),
                         );
