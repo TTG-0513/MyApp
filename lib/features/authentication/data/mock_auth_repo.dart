@@ -47,6 +47,12 @@ class MockAuthRepository implements AuthRepository {
   }
 
   @override
+  Future<String> deletUserData(String email, String name) async {
+    // TODO: implement deletUserData
+    throw UnimplementedError();
+  }
+
+  @override
   Future<String?> signInWithEmailPassword(String email, String password) async {
     // Existiert ein Nutzer überhaupt?
     final foundUser = users.firstWhereOrNull((user) => user.email == email);

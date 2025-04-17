@@ -5,4 +5,6 @@ abstract class AuthRepository {
   Future<void> logOut();
   Future<String?> signInWithGoogle();
   Stream<dynamic> onAuthChanged();
+
+  deletUserData(String email, String name) {}
 }

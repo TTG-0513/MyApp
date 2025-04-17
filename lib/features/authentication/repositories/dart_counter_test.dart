@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/authentication/widgets/my_dart_rechner_klein.dart';
+import 'package:ldj_app/features/game_selection/screens/dart_screen.dart';
 
 class DartCounterTest extends StatelessWidget {
   const DartCounterTest({super.key});
@@ -11,7 +12,7 @@ class DartCounterTest extends StatelessWidget {
       body: Stack(
         children: [
           MyThemeZwei(),
-          MyDartRechnerKlein(),
+          Counter(),
         ],
       ),
     );

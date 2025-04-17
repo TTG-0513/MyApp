@@ -26,7 +26,7 @@ class _UserHistoryScreenState extends State<UserHistoryScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
-
+  final TextEditingController passwortController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,6 +85,8 @@ class _UserHistoryScreenState extends State<UserHistoryScreen> {
                         ),
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
+                            await widget.authRepository.deletUserData(
+                                emailController.text, nameController.text);
                             await widget.firestoreUserAbstract.deletUser(
                                 nameController.text, emailController.text);
                             Navigator.of(context).push(MaterialPageRoute(

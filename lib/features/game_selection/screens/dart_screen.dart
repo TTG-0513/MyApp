@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
-
-class DartScreen extends StatelessWidget {
-  const DartScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Counter(),
-    );
-  }
-}
+import 'package:google_fonts/google_fonts.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_dart2.dart';
+import 'package:ldj_app/features/game_selection/widgets/my_tasten_klein.dart';
 
 class Counter extends StatefulWidget {
   const Counter({super.key});
@@ -40,9 +32,7 @@ class _CounterState extends State<Counter> {
       //Wenn gleich gedrückt wird
     } else if (buttonText == operands["equals"]) {
       secondValue = double.parse(output);
-      if (operand == operands[""]) {
-        valueOfOperation = firstValue + secondValue;
-      } else if (operand == operands["sub"]) {
+      if (operand == operands["sub"]) {
         valueOfOperation = firstValue - secondValue;
       } else if (operand == operands["*3"]) {
         valueOfOperation = firstValue - secondValue - secondValue - secondValue;
@@ -84,20 +74,57 @@ class _CounterState extends State<Counter> {
 
   Widget counterButton(var buttonText) {
     return Expanded(
-      child: OutlinedButton(
-        onPressed: () => buttonPressed(buttonText),
-        child: Text(buttonText,
-            style: const TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black)),
-        style: ButtonStyle(
-          padding: WidgetStateProperty.all(const EdgeInsets.all(24.0)),
-          backgroundColor: WidgetStateProperty.all<Color>(Colors.white),
-          textStyle: WidgetStateProperty.all(
-            const TextStyle(
-              //backgroundColor: Colors.yellow,
-              color: Colors.black,
+      child: MyTastenKlein(
+        height: 60,
+        width: 65,
+        child: TextButton(
+          onPressed: () => buttonPressed(buttonText),
+          style: ButtonStyle(
+            padding: WidgetStateProperty.all(const EdgeInsets.all(12.0)),
+            backgroundColor: WidgetStateProperty.all<Color>(Color(0xFF000000)),
+            textStyle: WidgetStateProperty.all(
+              const TextStyle(
+                //backgroundColor: Colors.yellow,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          child: Text(
+            buttonText,
+            style: GoogleFonts.manrope(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFEE0E47),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget counterButton2(var buttonText) {
+    return Expanded(
+      child: MyTastenKlein(
+        height: 60,
+        width: 65,
+        child: TextButton(
+          onPressed: () => buttonPressed(buttonText),
+          style: ButtonStyle(
+            padding: WidgetStateProperty.all(const EdgeInsets.all(6.0)),
+            backgroundColor: WidgetStateProperty.all<Color>(Color(0xFF000000)),
+            textStyle: WidgetStateProperty.all(
+              const TextStyle(
+                //backgroundColor: Colors.yellow,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          child: Text(
+            buttonText,
+            style: GoogleFonts.manrope(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: Color(0xFFEE0E47),
             ),
           ),
         ),
@@ -107,68 +134,130 @@ class _CounterState extends State<Counter> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Good Dart"),
-      ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              alignment: Alignment.centerRight,
-              color: Colors.white,
-              padding:
-                  const EdgeInsets.symmetric(vertical: 24.0, horizontal: 12.0),
-              child: Text(
-                output,
-                overflow: TextOverflow.clip,
-                maxLines: 1,
-                style: const TextStyle(
-                  fontSize: 40.0,
-                  fontWeight: FontWeight.bold,
+    return Column(
+      children: [
+        SizedBox(
+          height: 40,
+        ),
+        TopBarDart2(),
+        Container(
+          alignment: Alignment.center,
+          height: 280,
+          width: 280,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(200)),
+              color: Color(0xFFFFFFFF)),
+          child: Text(
+            output,
+            style: GoogleFonts.manrope(
+                fontSize: 100,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF000000)),
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.topCenter,
+                height: 60,
+                width: 360,
+                decoration: BoxDecoration(
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      offset: Offset(0, 0),
+                      spreadRadius: 1,
+                      blurRadius: 5.0,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ],
+                  border: Border.all(
+                    width: 1,
+                    color: Color(0xFFFFFFFF),
+                  ),
+                  color: Color(0xFF000000),
+                  borderRadius: BorderRadius.all(Radius.circular(16)),
+                ),
+                child: Text(
+                  output,
+                  overflow: TextOverflow.clip,
+                  maxLines: 1,
+                  style: const TextStyle(
+                      fontSize: 40.0,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFFEE0E47)),
                 ),
               ),
-            ),
-            Column(
-              children: <Widget>[
-                Row(
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                height: 360,
+                width: 360,
+                decoration: BoxDecoration(
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      offset: Offset(0, 0),
+                      spreadRadius: 1,
+                      blurRadius: 5.0,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ],
+                  border: Border.all(
+                    width: 1,
+                    color: Color(0xFFFFFFFF),
+                  ),
+                  color: Color(0xFF000000),
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                child: Column(
                   children: <Widget>[
-                    counterButton("7"),
-                    counterButton("8"),
-                    counterButton("9"),
-                    counterButton(operands["*2"]),
+                    Padding(padding: EdgeInsets.all(5)),
+                    Row(
+                      children: <Widget>[
+                        counterButton("1"),
+                        counterButton("2"),
+                        counterButton("3"),
+                        counterButton2(operands["*2"]),
+                      ],
+                    ),
+                    Padding(padding: EdgeInsets.all(5)),
+                    Row(
+                      children: <Widget>[
+                        counterButton("4"),
+                        counterButton("5"),
+                        counterButton("6"),
+                        counterButton2(operands["*3"]),
+                      ],
+                    ),
+                    Padding(padding: EdgeInsets.all(5)),
+                    Row(
+                      children: <Widget>[
+                        counterButton("7"),
+                        counterButton("8"),
+                        counterButton("9"),
+                        counterButton(operands["sub"]),
+                      ],
+                    ),
+                    Padding(padding: EdgeInsets.all(5)),
+                    Row(
+                      children: <Widget>[
+                        counterButton("0"),
+                        counterButton2("Clear"),
+                        counterButton(operands["equals"]),
+                        counterButton2(operands[""]),
+                      ],
+                    ),
                   ],
                 ),
-                Row(
-                  children: <Widget>[
-                    counterButton("4"),
-                    counterButton("5"),
-                    counterButton("6"),
-                    counterButton(operands["*3"]),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    counterButton("1"),
-                    counterButton("2"),
-                    counterButton("3"),
-                    counterButton(operands["sub"]),
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    counterButton("0"),
-                    counterButton("Clear"),
-                    counterButton(operands["equals"]),
-                    counterButton(operands[""]),
-                  ],
-                ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }

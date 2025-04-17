@@ -78,4 +78,10 @@ class FirebaseAuthRepository implements AuthRepository {
     }
     return null;
   }
+
+  @override
+  deletUserData(String email, String name) {
+    // TODO: implement deletUserData
+    throw UnimplementedError();
+  }
 }

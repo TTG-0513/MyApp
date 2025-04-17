@@ -52,6 +52,20 @@ class _LandingScreenState extends State<LandingScreen> {
     setState(() {});
   }
 
+  void delete() async {
+    if (emailController.text.isEmpty || passwortController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Bitte E-Mail oder Password ausfüllen")));
+      return;
+    }
+    // Nutzer einloggen
+    await widget.authRepository
+        .deletUserData(emailController.text, nameController.text);
+    await widget.firestoreUserAbstract
+        .deletUser(emailController.text, nameController.text);
+    setState(() {});
+  }
+
   void register() async {
     if (emailController.text.isEmpty || passwortController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(

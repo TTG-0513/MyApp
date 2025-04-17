@@ -4,8 +4,11 @@ import 'package:ldj_app/features/authentication/data/firebase_firestore/firestor
 import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/authentication/models/user.dart';
+import 'package:ldj_app/features/authentication/repositories/dart_counter_test.dart';
 import 'package:ldj_app/features/authentication/screens/landing_screen.dart';
 import 'package:ldj_app/features/authentication/data/login_repository.dart';
+import 'package:ldj_app/features/authentication/widgets/my_dart_rechner_klein.dart';
+import 'package:ldj_app/features/game_selection/screens/dart_screen.dart';
 
 class LDJApp extends StatelessWidget {
   final LoginRepository loginRepository;
@@ -29,10 +32,10 @@ class LDJApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: LandingScreen(
-      authRepository: authRepository,
-      loginRepository: loginRepository,
-      firestoreUserAbstract: firestoreUserAbstract,
-    ));
+        home: DartCounterTest(
+            //authRepository: authRepository,
+            //loginRepository: loginRepository,
+            //firestoreUserAbstract: firestoreUserAbstract,
+            ));
   }
 }
