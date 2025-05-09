@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:ldj_app/features/authentication/data/auth_repo.dart';
-import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_user_repo.dart';
 import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/authentication/models/user.dart';
-import 'package:ldj_app/features/authentication/repositories/dart_score_screen.dart';
 import 'package:ldj_app/features/authentication/screens/landing_screen.dart';
 import 'package:ldj_app/features/authentication/data/login_repository.dart';
-import 'package:ldj_app/features/authentication/widgets/my_dart_rechner_klein.dart';
-import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
 
 class LDJApp extends StatelessWidget {
   final LoginRepository loginRepository;
