@@ -153,52 +153,9 @@ class SettingsScreen extends StatelessWidget {
                     child: SliderExample(),
                   ),
                   Padding(padding: EdgeInsets.all(10)),
-                  Container(
-                    decoration: BoxDecoration(
-                      boxShadow: <BoxShadow>[
-                        BoxShadow(
-                          offset: Offset(0, 0),
-                          spreadRadius: 1,
-                          blurRadius: 5.0,
-                          color: Color(0xFFFFFFFF),
-                        ),
-                      ],
-                      border: Border.all(
-                        width: 1,
-                        color: Color(0xFFFFFFFF),
-                      ),
-                      gradient: LinearGradient(
-                        begin: Alignment.topRight,
-                        end: Alignment.bottomLeft,
-                        colors: [
-                          Color(0xFF000000),
-                          Color(0xFF000000),
-                        ],
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16),
-                      ),
-                    ),
-                    height: 100,
-                    width: 380,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Light/Dark",
-                          style: GoogleFonts.manrope(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFFFFFFFF)),
-                        ),
-                        FilledButton(
-                            onPressed: () {},
-                            child: Text(
-                                style: TextStyle(
-                                    fontSize: 15, color: Color(0xFFFFFFFF)),
-                                "Toggel"))
-                      ],
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [],
                   ),
                   SizedBox(
                     height: 20,

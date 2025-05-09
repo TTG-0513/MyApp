@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ldj_app/features/game_selection/models/kleiner_rechner/dart_rechner_k1.dart';
-import 'package:ldj_app/features/game_selection/models/kleiner_rechner/dart_rechner_k2.dart';
-import 'package:ldj_app/features/game_selection/models/kleiner_rechner/dart_rechner_k3.dart';
-import 'package:ldj_app/features/game_selection/models/kleiner_rechner/dart_rechner_k4.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_dart2.dart';
 
 class MyDartRechnerKlein extends StatelessWidget {
@@ -90,12 +86,7 @@ class MyDartRechnerKlein extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              DartRechnerK1(),
-              DartRechnerK2(),
-              DartRechnerK3(),
-              DartRechnerK4()
-            ],
+            children: [],
           ),
         )
       ],

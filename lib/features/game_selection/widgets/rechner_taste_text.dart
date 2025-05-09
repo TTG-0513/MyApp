@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class RechnerTasteText extends StatelessWidget {
-  const RechnerTasteText({
+class MyTastenText extends StatelessWidget {
+  const MyTastenText({
     super.key,
     this.child,
   });

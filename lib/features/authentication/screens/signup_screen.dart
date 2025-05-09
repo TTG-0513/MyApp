@@ -188,9 +188,35 @@ class _SignupScreenState extends State<SignupScreen> {
                     FilledButton(
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
-                            await widget.authRepository
-                                .registerWithEmailPassword(emailController.text,
-                                    passwortController.text);
+                            bool userExist = await widget.firestoreUserAbstract
+                                .checkUser(emailController.text);
+
+                            if (userExist) {
+                              showDialog(
+                                context: context,
+                                builder: (context) => AlertDialog(
+                                  title: Text("Registrierung fehlgeschlagen"),
+                                  content: Text(
+                                      "Die E-Mail-Adresse ist bereits registriert."),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () =>
+                                          Navigator.of(context).pop(),
+                                      child: Text("OK"),
+                                    ),
+                                  ],
+                                ),
+                              );
+
+                              return;
+                            }
+
+                            String text = await widget.authRepository
+                                    .registerWithEmailPassword(
+                                        emailController.text,
+                                        passwortController.text) ??
+                                "";
+
                             await widget.firestoreUserAbstract.createUser(
                                 nameController.text, emailController.text);
                             Navigator.of(context).push(

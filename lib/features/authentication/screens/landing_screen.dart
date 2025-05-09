@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_eins.dart';
 import 'package:ldj_app/features/authentication/data/auth_repo.dart';
-import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_user_repo.dart';
 import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
 import 'package:ldj_app/features/authentication/screens/reset_passwort.dart';
 import 'package:ldj_app/features/authentication/screens/signup_screen.dart';
@@ -37,57 +36,6 @@ class _LandingScreenState extends State<LandingScreen> {
   bool loading = false;
 
   String falseMessage = "";
-
-  void login() async {
-    if (emailController.text.isEmpty || passwortController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Bitte E-Mail oder Password ausfüllen")));
-      return;
-    }
-    // Nutzer einloggen
-    await widget.authRepository
-        .signInWithEmailPassword(emailController.text, passwortController.text);
-    await widget.firestoreUserAbstract
-        .getUser(emailController.text, nameController.text);
-    setState(() {});
-  }
-
-  void delete() async {
-    if (emailController.text.isEmpty || passwortController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Bitte E-Mail oder Password ausfüllen")));
-      return;
-    }
-    // Nutzer einloggen
-    await widget.authRepository
-        .deletUserData(emailController.text, nameController.text);
-    await widget.firestoreUserAbstract
-        .deletUser(emailController.text, nameController.text);
-    setState(() {});
-  }
-
-  void register() async {
-    if (emailController.text.isEmpty || passwortController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Bitte E-Mail oder Password ausfüllen")));
-      return;
-    }
-    // Nutzer registrieren
-    await widget.authRepository.registerWithEmailPassword(
-        emailController.text, passwortController.text);
-    bool createUsetSucess = await widget.firestoreUserAbstract
-        .createUser(emailController.text, passwortController.text);
-    if (createUsetSucess) {
-    } else {
-      falseMessage = "";
-    }
-    setState(() {});
-  }
-
-  void googleLogin() async {
-    await widget.authRepository.signInWithGoogle();
-    setState(() {});
-  }
 
   @override //immer die Controller Disposen also löschen/bereinigen/säubern
   void dispose() {
@@ -212,25 +160,25 @@ class _LandingScreenState extends State<LandingScreen> {
                       child: TextButton(
                         onPressed: () async {
                           if (_formKey.currentState!.validate()) {
-                            final anmelden = await mockCompleted();
-                            if (anmelden) {
-                              Navigator.of(context).pushReplacement(
-                                MaterialPageRoute(
-                                  builder: (context) => GamesScreen(
-                                    authRepository: widget.authRepository,
-                                    loginRepository: null,
-                                    firestoreUserAbstract:
-                                        widget.firestoreUserAbstract,
-                                  ),
+                            widget.authRepository.signInWithEmailPassword(
+                                emailController.text, passwortController.text);
+
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (context) => GamesScreen(
+                                  authRepository: widget.authRepository,
+                                  loginRepository: null,
+                                  firestoreUserAbstract:
+                                      widget.firestoreUserAbstract,
                                 ),
-                              );
-                            } else {
-                              setState(() {
-                                falseMessage =
-                                    "Gebe deine Daten bitte noch mal ein";
-                              });
-                            }
-                          } else {}
+                              ),
+                            );
+                          } else {
+                            setState(() {
+                              falseMessage =
+                                  "Gebe deine Daten bitte noch mal ein";
+                            });
+                          }
                         },
                         child: Text(
                           "Anmelden",
@@ -246,14 +194,13 @@ class _LandingScreenState extends State<LandingScreen> {
                       Center(
                         child: CircularProgressIndicator(),
                       ),
-                    if (falseMessage != null)
-                      Text(
-                        falseMessage!,
-                        style: GoogleFonts.manrope(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFFFFFFFF)),
-                      ),
+                    Text(
+                      falseMessage,
+                      style: GoogleFonts.manrope(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFFFFFFF)),
+                    ),
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).pushReplacement(

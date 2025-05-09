@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ldj_app/features/authentication/repositories/dart_counter_test.dart';
+import 'package:ldj_app/features/authentication/repositories/dart_score_screen.dart';
+import 'package:ldj_app/features/authentication/repositories/dart_score_screen2.dart';
 import 'package:ldj_app/features/game_selection/screens/settings_screen.dart';
+import 'package:ldj_app/features/game_selection/widgets/game_spezifikation.dart';
 
 class TopBarDart1 extends StatelessWidget {
   const TopBarDart1({
@@ -17,7 +19,9 @@ class TopBarDart1 extends StatelessWidget {
           width: 60,
           child: IconButton(
             onPressed: () {
-              Navigator.of(context).pop();
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => GameSpezifikation()),
+              );
             },
             icon: Icon(Icons.arrow_back),
             color: Color(0xFFFFFFFF),
@@ -29,7 +33,7 @@ class TopBarDart1 extends StatelessWidget {
           child: IconButton(
             onPressed: () {
               Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => DartCounterTest()),
+                MaterialPageRoute(builder: (context) => DartCounter()),
               );
             },
             icon: Icon(Icons.ads_click_outlined),

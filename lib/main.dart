@@ -10,6 +10,8 @@ import 'package:ldj_app/features/authentication/data/mock_database.dart';
 import 'package:ldj_app/features/authentication/data/user_repository.dart';
 import 'package:ldj_app/features/authentication/data/login_repository.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:ldj_app/provider/gamesettings_state.dart';
+import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -27,12 +29,15 @@ void main() async {
   final repo = userMockDatabase;
   final user = repo.user();
 
-  runApp(LDJApp(
-    authRepository: authRepository,
-    loginRepository: loginRepository,
-    user: user,
-    userRepository: userMockDatabase,
-    firestoreUserAbstract: firestoreUserAbstract,
+  runApp(ChangeNotifierProvider(
+    create: (_) => GamesettingsState(),
+    child: LDJApp(
+      authRepository: authRepository,
+      loginRepository: loginRepository,
+      user: user,
+      userRepository: userMockDatabase,
+      firestoreUserAbstract: firestoreUserAbstract,
+    ),
   ));
   //(userRepository: MockUserRepository(),)
 }

@@ -7,6 +7,8 @@ abstract class FirestoreUserAbstract {
     String name,
     String email,
   );
+  Future<bool> checkUser(String email);
+
   Future<String> getUser(
     String name,
     String email,
@@ -16,7 +18,7 @@ abstract class FirestoreUserAbstract {
     String emeil,
   );
   Future<String> deletUser(
-    String name,
     String email,
   );
+  Future<String> getEmail();
 }

@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -26,7 +24,7 @@ class FirebaseAuthRepository implements AuthRepository {
   Future<String?> registerWithEmailPassword(
       String email, String password) async {
     try {
-      await _auth.createUserWithEmailAndPassword(
+      UserCredential user = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
@@ -80,8 +78,12 @@ class FirebaseAuthRepository implements AuthRepository {
   }
 
   @override
-  deletUserData(String email, String name) {
-    // TODO: implement deletUserData
-    throw UnimplementedError();
+  deletUserData() async {
+    await _auth.currentUser?.delete();
+  }
+
+  @override
+  String getEmail() {
+    return _auth.currentUser?.email ?? "";
   }
 }

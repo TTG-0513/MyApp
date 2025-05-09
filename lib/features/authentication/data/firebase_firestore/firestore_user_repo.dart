@@ -30,8 +30,33 @@ class FirestoreUserRepo implements FirestoreUserAbstract {
   }
 
   @override
-  Future<String> deletUser(String name, email) {
-    _db.collection("Users").doc().update({"name": name, "email": email});
+  Future<String> deletUser(String email) async {
+    final querySnapshot = await _db
+        .collection("Users")
+        .where("email", isEqualTo: email)
+        .limit(1)
+        .get();
+    if (querySnapshot.docs.isNotEmpty) {
+      await querySnapshot.docs.first.reference.delete();
+      return "User-Daten gelöscht";
+    } else {
+      return "Kein passender User gefunden";
+    }
+  }
+
+  @override
+  Future<bool> checkUser(String email) async {
+    final querySnapshot = await _db
+        .collection("Users")
+        .where("email", isEqualTo: email)
+        .limit(1)
+        .get();
+    return querySnapshot.docs.isNotEmpty;
+  }
+
+  @override
+  Future<String> getEmail() {
+    // TODO: implement getEmail
     throw UnimplementedError();
   }
 }

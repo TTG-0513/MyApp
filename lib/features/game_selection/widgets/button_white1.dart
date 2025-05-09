@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ldj_app/features/authentication/repositories/dart_counter_test.dart';
+import 'package:ldj_app/features/authentication/repositories/dart_score_screen.dart';
+import 'package:ldj_app/provider/gamesettings_state.dart';
+import 'package:provider/provider.dart';
 
 class ButtonWhite1 extends StatelessWidget {
   const ButtonWhite1({
@@ -32,7 +34,7 @@ class ButtonWhite1 extends StatelessWidget {
       child: TextButton(
         onPressed: () {
           Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => DartCounterTest()),
+            MaterialPageRoute(builder: (context) => DartCounter()),
           );
         },
         child: Text(

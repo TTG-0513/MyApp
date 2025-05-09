@@ -47,7 +47,7 @@ class MockAuthRepository implements AuthRepository {
   }
 
   @override
-  Future<String> deletUserData(String email, String name) async {
+  Future<String> deletUserData() async {
     // TODO: implement deletUserData
     throw UnimplementedError();
   }
@@ -93,5 +93,11 @@ class MockAuthRepository implements AuthRepository {
     }
     streamController.add(foundUser);
     return null;
+  }
+
+  @override
+  String getEmail() {
+    // TODO: implement getEmail
+    throw UnimplementedError();
   }
 }
