@@ -6,7 +6,7 @@
 	<dict>
 		<key>GoogleUtilities_Privacy.bundle/Info.plist</key>
 		<data>
-		3HPyq0gKxApnWmVdTQxJXFLgR9U=
+		9WUiHRTsKd6uXqDeiefhjmAvbqc=
 		</data>
 		<key>GoogleUtilities_Privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Headers/GULAppEnvironmentUtil.h</key>
 		<data>
-		xXdtjneyYNasmDpcEIU/p1GTHlk=
+		pXD6RRpqGbIfC4JoYESwkMnQvt4=
 		</data>
 		<key>Headers/GULApplication.h</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Headers/GULLogger.h</key>
 		<data>
-		YiqtpeoBbGUrvPdD+7zepUGAfCA=
+		JRX2UAT3Q2C8Y/gOhC2ve+GcefA=
 		</data>
 		<key>Headers/GULLoggerLevel.h</key>
 		<data>
@@ -80,13 +80,17 @@
 		<data>
 		4X41UFqYbPvmhDB93lYXejW6oSw=
 		</data>
+		<key>Headers/GULUserDefaults.h</key>
+		<data>
+		0Of0cBjQBb/OBqa93s7xZ8UpjTI=
+		</data>
 		<key>Headers/GoogleUtilities-umbrella.h</key>
 		<data>
-		RdavbdmvdslHznL+EPlCO/nhaUk=
+		+L4ZYE0BQFbCRZcUl8XWjSwt/3M=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		aVNsScB9l9V8ALWNKk/ThS/26a8=
+		+GJdKqdV1XCu4brv3ET+fCcPrZQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -99,7 +103,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			60hOhd25KH1/wy9aEDhmfUnosnh04IlCm8P34iFfNBQ=
+			uAFDgnFp1lakgsVPhmJzkxBIQtbpyw6j5lHNt7Duhho=
 			</data>
 		</dict>
 		<key>GoogleUtilities_Privacy.bundle/PrivacyInfo.xcprivacy</key>
@@ -120,7 +124,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jNzjLypaoNMJWkbkha1dGaw69ouleyhcnEXh7QEYYAw=
+			fAPmm3I9gMNqCdBZRZnUjtdK57+JKibE/WmSgY5OLj8=
 			</data>
 		</dict>
 		<key>Headers/GULApplication.h</key>
@@ -148,7 +152,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XR4R5yn9bWSZReFRKToQYHOGB8o0YErfIhFqYNUYlb0=
+			LY4u7RfvbFX1rdixgo84YuJ5O17KvmWshjm1kffb1Rw=
 			</data>
 		</dict>
 		<key>Headers/GULLoggerLevel.h</key>
@@ -228,11 +232,18 @@
 			RXX77bV5gh6q/JqXdNYIGalkk5NAkTeEyA8ikWTsf5o=
 			</data>
 		</dict>
+		<key>Headers/GULUserDefaults.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Wxdmoz232Wm0AngLqZ4q1vZTqOto6hIy1CvelEqvFdQ=
+			</data>
+		</dict>
 		<key>Headers/GoogleUtilities-umbrella.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			d03mJR8egL4PHAc2+cAKXmt3JC4ttwnLXJDJuNV3Kh4=
+			pi0wJgnSszBn13elnmtgKBD9PaXhB6XOJX0H54zD4Xg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

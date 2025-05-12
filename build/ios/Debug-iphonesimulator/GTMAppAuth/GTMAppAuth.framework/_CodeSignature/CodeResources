@@ -6,7 +6,7 @@
 	<dict>
 		<key>GTMAppAuth_Privacy.bundle/Info.plist</key>
 		<data>
-		v5igqcjRZDZcuJZpRWRy0hnFQWY=
+		qTNCnuSHbpf96rOBAUNME6llkIU=
 		</data>
 		<key>GTMAppAuth_Privacy.bundle/PrivacyInfo.xcprivacy</key>
 		<data>
@@ -22,15 +22,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		XDwBp/nErvbtUEzS/W3XAXUllLM=
+		8YRkxWI3XTeI+zOaX8GF5ugqDmc=
 		</data>
 		<key>Modules/GTMAppAuth.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		1SBWmpnOk+43qjhD5co1APJjESg=
+		rxcKwbi5IZTjqoERhA0TTclZygI=
 		</data>
 		<key>Modules/GTMAppAuth.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		7jpigQpKdsZrFJuBUh/5s892Y4s=
+		mjJ/aK1gVxkYtVAExx9H6UgshME=
 		</data>
 		<key>Modules/GTMAppAuth.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -67,11 +67,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			v5igqcjRZDZcuJZpRWRy0hnFQWY=
+			qTNCnuSHbpf96rOBAUNME6llkIU=
 			</data>
 			<key>hash2</key>
 			<data>
-			N/CcPuTBuwlgQL0iGtllivKnFMM/GTU3CUPB58kK4yA=
+			qDPn/zHA/ylO/5e9xWzPwytefFTBSoQRIWvCzVxEkaQ=
 			</data>
 		</dict>
 		<key>GTMAppAuth_Privacy.bundle/PrivacyInfo.xcprivacy</key>
@@ -111,22 +111,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1SBWmpnOk+43qjhD5co1APJjESg=
+			rxcKwbi5IZTjqoERhA0TTclZygI=
 			</data>
 			<key>hash2</key>
 			<data>
-			qCq7AgnRPkMgVieOuwKyC8hDAeMhb4l7XDh9HO7WCaQ=
+			AZ/CJ4e9zEvNC0j6U8YZ5KvlhvWyAloHYnsIhxogJmA=
 			</data>
 		</dict>
 		<key>Modules/GTMAppAuth.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7jpigQpKdsZrFJuBUh/5s892Y4s=
+			mjJ/aK1gVxkYtVAExx9H6UgshME=
 			</data>
 			<key>hash2</key>
 			<data>
-			RGx4M0VkNK5E1Pv3MuwPbXin6ZTSkzR9ykgbEVejDjU=
+			jk7+QgzeqKVrikck63Q3ScWvLme+LWxP1WTtP89hwAo=
 			</data>
 		</dict>
 		<key>Modules/GTMAppAuth.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
