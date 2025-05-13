@@ -162,7 +162,6 @@ class _LandingScreenState extends State<LandingScreen> {
                           if (_formKey.currentState!.validate()) {
                             widget.authRepository.signInWithEmailPassword(
                                 emailController.text, passwortController.text);
-
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
                                 builder: (context) => GamesScreen(

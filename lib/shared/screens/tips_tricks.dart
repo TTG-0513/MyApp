@@ -10,8 +10,8 @@ class Tipps extends StatelessWidget {
       children: [
         MyThemeZwei(),
         Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           spacing: 10,
           children: [
             SizedBox(
@@ -21,7 +21,7 @@ class Tipps extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  height: 70,
+                  height: 40,
                   width: 60,
                   child: IconButton(
                     onPressed: () {
@@ -40,7 +40,7 @@ class Tipps extends StatelessWidget {
             Image.asset("assets/images/Beschreibung Stand.png"),
             Image.asset("assets/images/Der Wurf.png"),
             Image.asset("assets/images/Beschreibung Wurf.png"),
-            Image.asset("assets/images/Aussehen.png")
+            Image.asset("assets/images/DatenDart.png")
           ],
         )
       ],

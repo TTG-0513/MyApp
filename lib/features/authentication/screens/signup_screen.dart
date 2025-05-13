@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ldj_app/config/my_theme_zwei.dart';
 import 'package:ldj_app/features/authentication/data/auth_repo.dart';
-import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_user_repo.dart';
 import 'package:ldj_app/features/authentication/data/firebase_firestore/firestore_userdata.dart';
 import 'package:ldj_app/features/game_selection/screens/games_screen.dart';
 import 'package:ldj_app/features/game_selection/widgets/my_app_top_bars/top_bar_icons.dart';
@@ -58,11 +57,6 @@ class _SignupScreenState extends State<SignupScreen> {
             children: [
               SizedBox(
                 height: 80,
-              ),
-              SizedBox(
-                height: 250,
-                width: 250,
-                child: Image.asset("assets/images/AvatarImage.png"),
               ),
             ],
           ),
@@ -144,9 +138,9 @@ class _SignupScreenState extends State<SignupScreen> {
                             style: GoogleFonts.manrope(
                                 color: Color(0xFFFFFFFF), fontSize: 15),
                             validator: (value) {
-                              return (value?.length ?? 0) > 8
+                              return (value?.length ?? 0) > 6
                                   ? null
-                                  : 'Das Passwort muss mindestens 8 Zeichen haben ';
+                                  : 'Das Passwort muss mindestens 6 Zeichen haben ';
                             },
                             decoration: InputDecoration(
                               labelText: 'Passwort',
@@ -166,9 +160,9 @@ class _SignupScreenState extends State<SignupScreen> {
                             style: GoogleFonts.manrope(
                                 color: Color(0xFFFFFFFF), fontSize: 15),
                             validator: (value) {
-                              return (value?.length ?? 0) > 8
+                              return (value?.length ?? 0) > 6
                                   ? null
-                                  : 'Das Passwort muss mindestens 8 Zeichen haben ';
+                                  : 'Das Passwort muss mindestens 6 Zeichen haben ';
                             },
                             decoration: InputDecoration(
                               labelText: 'Passwort Wiederholen',
@@ -190,7 +184,6 @@ class _SignupScreenState extends State<SignupScreen> {
                           if (_formKey.currentState!.validate()) {
                             bool userExist = await widget.firestoreUserAbstract
                                 .checkUser(emailController.text);
-
                             if (userExist) {
                               showDialog(
                                 context: context,
@@ -207,16 +200,13 @@ class _SignupScreenState extends State<SignupScreen> {
                                   ],
                                 ),
                               );
-
                               return;
                             }
-
                             String text = await widget.authRepository
                                     .registerWithEmailPassword(
                                         emailController.text,
                                         passwortController.text) ??
                                 "";
-
                             await widget.firestoreUserAbstract.createUser(
                                 nameController.text, emailController.text);
                             Navigator.of(context).push(
