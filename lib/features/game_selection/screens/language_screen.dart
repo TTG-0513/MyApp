@@ -60,6 +60,44 @@ class LanguageScreen extends StatelessWidget {
                     Radius.circular(16),
                   ),
                 ),
+                height: 50,
+                width: 350,
+                child: Text(
+                  "Comming Soon",
+                  style: GoogleFonts.manrope(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      color: Color(0xFFE04700)),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(8, 0, 0, 2),
+                alignment: Alignment.topLeft,
+                decoration: BoxDecoration(
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      offset: Offset(0, 0),
+                      spreadRadius: 1,
+                      blurRadius: 5.0,
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ],
+                  border: Border.all(
+                    width: 1,
+                    color: Color(0xFFFFFFFF),
+                  ),
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Color(0xFF000000),
+                      Color(0xFF000000),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(16),
+                  ),
+                ),
                 height: 35,
                 width: 350,
                 child: Text(

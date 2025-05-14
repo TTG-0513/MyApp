@@ -63,6 +63,17 @@ class SpecialGamesScreen extends StatelessWidget {
                   Container(
                     height: 30,
                     width: 350,
+                    child: Text(
+                      " Comming Soon",
+                      style: GoogleFonts.manrope(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFFFFFFFF)),
+                    ),
+                  ),
+                  Container(
+                    height: 30,
+                    width: 350,
                     decoration: BoxDecoration(
                       boxShadow: <BoxShadow>[
                         BoxShadow(
