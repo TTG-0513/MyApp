@@ -20,5 +20,4 @@ abstract class FirestoreUserAbstract {
   Future<String> deletUser(
     String email,
   );
-  Future<String> getEmail();
 }

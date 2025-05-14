@@ -39,7 +39,7 @@ class Tipps extends StatelessWidget {
                 Image.asset("assets/images/Beschreibung Stand.png"),
                 Image.asset("assets/images/Der Wurf.png"),
                 Image.asset("assets/images/Beschreibung Wurf.png"),
-                Image.asset("assets/images/Das Aussehen.png")
+                Image.asset("assets/images/DartDaten.png")
               ],
             )
           ],

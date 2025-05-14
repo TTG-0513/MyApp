@@ -109,7 +109,21 @@ class GamesScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       )))),
               Padding(padding: EdgeInsets.all(5)),
-              MyContainer(
+              Text(
+                "Comming Soon",
+                style: TextStyle(
+                    color: Color(0xFFFFFFFF),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "UserHistory",
+                style: TextStyle(
+                    color: Color(0xFFFFFFFF),
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              /*MyContainer(
                   width: 220,
                   height: 60,
                   child: GestureDetector(
@@ -131,7 +145,7 @@ class GamesScreen extends StatelessWidget {
                             color: Color(0xFFEE0E47),
                             fontSize: 20,
                             fontWeight: FontWeight.bold),
-                      )))),
+                      )))),*/
               Padding(padding: EdgeInsets.all(5)),
               MyContainer(
                   width: 220,

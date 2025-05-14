@@ -53,10 +53,4 @@ class FirestoreUserRepo implements FirestoreUserAbstract {
         .get();
     return querySnapshot.docs.isNotEmpty;
   }
-
-  @override
-  Future<String> getEmail() {
-    // TODO: implement getEmail
-    throw UnimplementedError();
-  }
 }
