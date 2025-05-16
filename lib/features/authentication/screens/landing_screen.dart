@@ -89,14 +89,47 @@ class _LandingScreenState extends State<LandingScreen> {
                 width: 250,
                 child: Image.asset("assets/images/AppLogo.png"),
               ),
+              Padding(
+                padding: EdgeInsets.all(130),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MyContainer2(
+                      height: 100,
+                      width: 100,
+                      child: TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                builder: (context) => GamesScreen(
+                                  authRepository: widget.authRepository,
+                                  loginRepository: null,
+                                  firestoreUserAbstract:
+                                      widget.firestoreUserAbstract,
+                                ),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "Start",
+                            style: GoogleFonts.manrope(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(242, 255, 255, 255),
+                            ),
+                          )),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
-        Padding(
+
+        /*Padding(
           padding: const EdgeInsets.all(5.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
                 height: 300,
@@ -274,7 +307,7 @@ class _LandingScreenState extends State<LandingScreen> {
               ),
             ],
           ),
-        ),
+        ),*/
       ]),
     );
   }
