@@ -116,7 +116,7 @@ class _LandingScreenState extends State<LandingScreen> {
                             style: GoogleFonts.manrope(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(242, 255, 255, 255),
+                              color: Color(0xFFFFFFFF),
                             ),
                           )),
                     ),
